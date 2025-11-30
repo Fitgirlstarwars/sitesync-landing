@@ -1,0 +1,6 @@
+# SiteSync Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://arpro.fm/sitemap.xml

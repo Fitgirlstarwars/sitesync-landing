@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <defs>
+    <!-- Concrete Texture -->
+    <filter id="concrete" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" in="noise" result="coloredNoise"/>
+      <feComponentTransfer in="coloredNoise" result="contrastNoise">
+        <feFuncR type="linear" slope="0.5" intercept="0.25"/>
+        <feFuncG type="linear" slope="0.5" intercept="0.25"/>
+        <feFuncB type="linear" slope="0.5" intercept="0.25"/>
+      </feComponentTransfer>
+      <feDiffuseLighting in="contrastNoise" lighting-color="#888" surfaceScale="2">
+        <feDistantLight azimuth="45" elevation="60"/>
+      </feDiffuseLighting>
+    </filter>
+
+    <!-- Wood Texture -->
+    <filter id="wood" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.2" numOctaves="3" stitchTiles="stitch" result="turbulence"/>
+      <feColorMatrix type="saturate" values="0.2" in="turbulence" result="desaturated"/>
+      <feComponentTransfer in="desaturated" result="contrast">
+        <feFuncR type="linear" slope="2" intercept="-0.5"/>
+        <feFuncG type="linear" slope="2" intercept="-0.5"/>
+        <feFuncB type="linear" slope="2" intercept="-0.5"/>
+      </feComponentTransfer>
+      <feColorMatrix type="matrix" values="0.6 0.3 0.1 0 0  0.5 0.25 0.1 0 0  0.4 0.2 0.05 0 0  0 0 0 1 0" in="contrast" result="coloredWood"/>
+    </filter>
+
+    <!-- Brushed Steel Texture -->
+    <filter id="steel" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.005 0.8" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="greyNoise"/>
+      <feComponentTransfer in="greyNoise" result="contrastNoise">
+        <feFuncR type="linear" slope="1.5" intercept="-0.25"/>
+        <feFuncG type="linear" slope="1.5" intercept="-0.25"/>
+        <feFuncB type="linear" slope="1.5" intercept="-0.25"/>
+      </feComponentTransfer>
+      <feSpecularLighting in="contrastNoise" surfaceScale="3" specularConstant="0.8" specularExponent="20" lighting-color="#dce0e5" result="lighting">
+        <feDistantLight azimuth="90" elevation="20"/>
+      </feSpecularLighting>
+      <feComposite in="lighting" in2="contrastNoise" operator="in" result="composite"/>
+    </filter>
+  </defs>
+</svg>

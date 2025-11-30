@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+
+# Dev files
+*.py
+screenshots/
+screenshots-v2/
+v1-backup/
+
+# IDE
+.vscode/
+.idea/
