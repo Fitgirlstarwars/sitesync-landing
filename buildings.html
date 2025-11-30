@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Buildings | SiteSync Industrial Intelligence</title>
+    <meta name="description" content="Stop losing your building's history every time you switch contracts. SiteSync gives you permanent data ownership, vendor independence, and predictive health.">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="For Buildings | SiteSync Industrial Intelligence">
+    <meta property="og:description" content="Your building's memory, forever. Stop losing maintenance history when contracts change.">
+    <meta property="og:url" content="https://liftsmith.xyz/buildings">
+    <meta property="og:image" content="https://liftsmith.xyz/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#1a1a1a">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body class="page-buildings">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="steel-nav" role="navigation" aria-label="Main navigation">
+        <a href="/" class="brand">
+            <span class="mark" aria-hidden="true">◈</span>
+            <span class="text">SITESYNC</span>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-links">
+            <a href="/#system">THE SYSTEM</a>
+            <a href="/#schematic">HOW IT WORKS</a>
+            <a href="/technicians">FOR TECHNICIANS</a>
+        </div>
+        <a href="#claim" class="cta-btn">CLAIM YOUR BUILDING</a>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="grid-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge">FOR BUILDINGS</span>
+                <h1 class="page-title">
+                    YOUR BUILDING'S<br>
+                    MEMORY. FOREVER.
+                </h1>
+                <p class="hero-lead">
+                    Contractors come and go. Vendors change. Staff turns over.<br>
+                    <strong>Your building's history shouldn't leave with them.</strong>
+                </p>
+                <div class="hero-actions">
+                    <a href="#claim" class="cta-btn large">GET STARTED FREE</a>
+                    <a href="#flow" class="ghost-btn">SEE HOW IT WORKS</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problem-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>01 // THE PROBLEM</h2>
+                </div>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">✕</div>
+                        <h3>LOST HISTORY</h3>
+                        <p>Every time you switch service providers, you lose years of maintenance records, repair history, and institutional knowledge.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">✕</div>
+                        <h3>VENDOR LOCK-IN</h3>
+                        <p>Your data lives in their systems. Want to leave? Good luck getting complete records. They own your building's memory.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">✕</div>
+                        <h3>REPEATED MISTAKES</h3>
+                        <p>New technicians don't know what was tried before. The same diagnostic process happens over and over. Time and money wasted.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">✕</div>
+                        <h3>BLIND DECISIONS</h3>
+                        <p>Without complete asset history, you can't predict failures. You're always reacting, never preventing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution-section">
+            <div class="section-container">
+                <div class="solution-content">
+                    <div class="section-header">
+                        <h2>02 // THE SOLUTION</h2>
+                    </div>
+                    <h3 class="solution-headline">
+                        DATA OWNERSHIP<br>
+                        RETURNS TO THE BUILDING
+                    </h3>
+                    <p class="solution-text">
+                        SiteSync creates a permanent, building-owned ledger of every service event, every repair, every diagnosis.
+                        The data belongs to the walls, not the vendor. Switch providers without losing a single record.
+                    </p>
+                </div>
+                <div class="solution-visual">
+                    <div class="building-diagram">
+                        <div class="building-core">
+                            <span class="building-icon">◈</span>
+                            <span class="building-label">YOUR BUILDING</span>
+                        </div>
+                        <div class="data-orbit">
+                            <div class="orbit-item" data-delay="0">HVAC History</div>
+                            <div class="orbit-item" data-delay="1">Elevator Logs</div>
+                            <div class="orbit-item" data-delay="2">Plumbing Records</div>
+                            <div class="orbit-item" data-delay="3">Electrical Data</div>
+                            <div class="orbit-item" data-delay="4">Fire Systems</div>
+                            <div class="orbit-item" data-delay="5">Security Logs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow Section -->
+        <section id="flow" class="flow-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>03 // HOW IT WORKS</h2>
+                </div>
+                <div class="flow-timeline">
+                    <div class="flow-line"></div>
+
+                    <div class="flow-step">
+                        <div class="flow-number">01</div>
+                        <div class="flow-content">
+                            <div class="flow-visual">
+                                <div class="visual-box">
+                                    <span class="visual-icon">◈</span>
+                                </div>
+                            </div>
+                            <div class="flow-text">
+                                <h3>CLAIM YOUR BUILDING</h3>
+                                <p>Register your property and create its permanent digital identity. Takes 5 minutes. No hardware required.</p>
+                                <ul class="flow-benefits">
+                                    <li>Instant building profile</li>
+                                    <li>Asset inventory import</li>
+                                    <li>QR codes for equipment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="flow-number">02</div>
+                        <div class="flow-content">
+                            <div class="flow-visual">
+                                <div class="visual-box">
+                                    <span class="visual-icon">⟳</span>
+                                </div>
+                            </div>
+                            <div class="flow-text">
+                                <h3>CONNECT YOUR VENDORS</h3>
+                                <p>Invite current service providers. They log work through SiteSync. Data flows to your building's ledger automatically.</p>
+                                <ul class="flow-benefits">
+                                    <li>Any vendor can join free</li>
+                                    <li>Automatic work order capture</li>
+                                    <li>Photo and document storage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="flow-number">03</div>
+                        <div class="flow-content">
+                            <div class="flow-visual">
+                                <div class="visual-box">
+                                    <span class="visual-icon">★</span>
+                                </div>
+                            </div>
+                            <div class="flow-text">
+                                <h3>ACCUMULATE INTELLIGENCE</h3>
+                                <p>Every repair, every diagnostic, every solution—captured forever. Your building gets smarter with every service call.</p>
+                                <ul class="flow-benefits">
+                                    <li>AI-powered insights</li>
+                                    <li>Predictive maintenance alerts</li>
+                                    <li>Cross-vendor analytics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="flow-number">04</div>
+                        <div class="flow-content">
+                            <div class="flow-visual">
+                                <div class="visual-box">
+                                    <span class="visual-icon">⟁</span>
+                                </div>
+                            </div>
+                            <div class="flow-text">
+                                <h3>SWITCH WITHOUT LOSS</h3>
+                                <p>Change vendors anytime. Your data stays. New providers get instant context. No more starting from zero.</p>
+                                <ul class="flow-benefits">
+                                    <li>Complete history transfer</li>
+                                    <li>Vendor performance metrics</li>
+                                    <li>Seamless transitions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>04 // CAPABILITIES</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">◈</div>
+                        <h3>PERMANENT LEDGER</h3>
+                        <p>Immutable record of every service event. Cryptographically secured. Always accessible.</p>
+                    </div>
+                    <div class="feature-card featured">
+                        <div class="feature-icon">★</div>
+                        <h3>PREDICTIVE HEALTH</h3>
+                        <p>AI analyzes patterns across your assets. Know what will fail before it fails.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⟁</div>
+                        <h3>VENDOR SCORECARD</h3>
+                        <p>Track performance across all service providers. Data-driven vendor decisions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⟳</div>
+                        <h3>INSTANT ONBOARDING</h3>
+                        <p>New technicians get full context immediately. No more "what did they try last time?"</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">◇</div>
+                        <h3>ASSET GENEALOGY</h3>
+                        <p>Complete lifecycle tracking from installation to replacement. Every part, every repair.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">▢</div>
+                        <h3>COMPLIANCE READY</h3>
+                        <p>Automatic documentation for audits. Export reports in any format. Always inspection-ready.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="page-stats-section">
+            <div class="section-container">
+                <div class="stats-headline">
+                    <h2>MEASURABLE IMPACT</h2>
+                    <p>Real results from buildings on SiteSync</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="42">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">Faster Repairs</span>
+                        <span class="stat-detail">Average time reduction with full history access</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="67">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">Less Downtime</span>
+                        <span class="stat-detail">Through predictive maintenance alerts</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">Data Retention</span>
+                        <span class="stat-detail">When switching service providers</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-unit">x</span>
+                        <span class="stat-label">ROI First Year</span>
+                        <span class="stat-detail">Average return on investment</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="page-testimonial-section">
+            <div class="section-container">
+                <blockquote class="large-testimonial">
+                    <p>"We switched elevator contractors twice in three years. Before SiteSync, each transition meant losing everything. Now? New vendors hit the ground running with 10 years of history at their fingertips."</p>
+                    <cite>
+                        <strong>Michael Torres</strong>
+                        <span>Director of Facilities, Pacific Tower Group</span>
+                        <span class="cite-detail">47 properties, 12M sq ft under management</span>
+                    </cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="claim" class="page-cta-section">
+            <div class="section-container">
+                <div class="cta-content">
+                    <h2>CLAIM YOUR<br>BUILDING TODAY</h2>
+                    <p>Start building permanent memory. Free for your first 3 properties.</p>
+                    <ul class="cta-features">
+                        <li>No credit card required</li>
+                        <li>Setup in under 5 minutes</li>
+                        <li>Invite unlimited vendors</li>
+                    </ul>
+                </div>
+                <form class="lead-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="building_name" placeholder="Building name" required aria-label="Building name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="portfolio_size" placeholder="Number of properties" aria-label="Number of properties">
+                    </div>
+                    <button type="submit" class="submit-btn full">START FREE TRIAL</button>
+                    <p class="form-note">Join 2,847 buildings already on SiteSync</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="industrial-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">◈ SITESYNC</span>
+                    <p class="footer-tagline">The Operating System for Building Services</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>PRODUCT</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Integrations</a>
+                        <a href="#">API</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>SOLUTIONS</h4>
+                        <a href="/buildings">For Buildings</a>
+                        <a href="/technicians">For Technicians</a>
+                        <a href="#">Enterprise</a>
+                        <a href="#">Partners</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>RESOURCES</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Support</a>
+                        <a href="#">Status</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <small>© 2025 SiteSync Industrial Intelligence. All rights reserved.</small>
+                    <div class="legal-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <span class="badge">SOC 2</span>
+                    <span class="badge">GDPR</span>
+                    <span class="badge">ISO 27001</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="pages.js"></script>
+</body>
+</html>
