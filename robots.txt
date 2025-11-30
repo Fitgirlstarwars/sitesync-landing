@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://arpro.fm/sitemap.xml
+Sitemap: https://liftsmith.xyz/sitemap.xml
