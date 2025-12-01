@@ -210,7 +210,8 @@ h1, h2, h3 {
 }
 
 .terminal-trigger {
-    animation: terminalPulse 2s infinite;
+    position: relative;
+    overflow: hidden;
 }
 
 .terminal-trigger:hover {
@@ -1116,30 +1117,7 @@ h1, h2, h3 {
     }
 
     .cta-btn.terminal-trigger {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 60px; /* Position to the left of the hamburger */
-        top: 50%;
-        transform: translateY(-50%);
-        width: auto;
-        height: 40px;
-        margin: 0;
-        padding: 0 12px;
-        font-size: 1.2rem;
-        background: rgba(0, 0, 0, 0.6);
-        border: 1px solid var(--accent-orange);
-        color: var(--accent-orange);
-        border-radius: 4px;
-        z-index: 102; /* Above nav links if they slide in */
-        box-shadow: none;
-    }
-
-    .cta-btn.terminal-trigger:hover {
-        background: var(--accent-orange);
-        color: #fff;
-        box-shadow: 0 0 15px rgba(230, 81, 0, 0.6);
+        display: none; /* User requested removal from "lower bar" - assuming they meant mobile view entirely or just bottom */
     }
 
     /* Disable the expanding circle effect on mobile */
@@ -1483,5 +1461,30 @@ button:focus-visible {
 
     .layer-content h2 {
         font-size: 2rem !important;
+    }
+}
+/* Mobile Terminal Trigger Positioning */
+@media (max-width: 1024px) {
+    .cta-btn.terminal-trigger {
+        left: 10px !important; /* Move to left */
+        right: auto !important; /* Reset right */
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 8px;
+        font-size: 0.9rem;
+        height: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .cta-btn.terminal-trigger:hover {
+        border-color: var(--accent-orange);
+        color: var(--accent-orange);
+    }
+
+    /* Adjust Brand to center or right to avoid overlap if needed, 
+       but currently it's flex-start. Let's push it a bit if needed. */
+    .brand {
+        margin-left: 50px; /* Make space for the button */
     }
 }
