@@ -136,10 +136,15 @@
                 <span class="stat-unit">K</span>
                 <span class="stat-label">Work Orders Logged</span>
             </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="99">0</span>
-                <span class="stat-unit">%</span>
-                <span class="stat-label">Data Retention</span>
+            <div class="stat-item health-score-trigger" role="button" tabindex="0" aria-label="View Health Score Details" data-modal="health-score">
+                <div class="health-ring-container">
+                    <svg class="health-ring" viewBox="0 0 100 100">
+                        <circle class="ring-bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="ring-progress" cx="50" cy="50" r="45"></circle>
+                    </svg>
+                    <span class="stat-number health-value" data-target="91">0</span>
+                </div>
+                <span class="stat-label">Building Health Score</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number" data-target="42">0</span>
@@ -159,11 +164,13 @@
                 <h3>DATA OWNERSHIP</h3>
                 <p>The building owns its history. Not the contractor. Not the vendor. The data stays with the walls.</p>
                 <div class="icon-box">◈</div>
+                <div class="connector-pipe"></div>
             </div>
             <div class="grid-item wood-card">
                 <h3>PORTABLE REPUTATION</h3>
                 <p>Technicians build a career on verified skill. Your expertise travels with you, visible to everyone.</p>
                 <div class="icon-box">★</div>
+                <div class="connector-pipe"></div>
             </div>
             <div class="grid-item steel-card">
                 <h3>OPEN KNOWLEDGE</h3>
@@ -195,7 +202,7 @@
             <div class="step">
                 <div class="step-number">02</div>
                 <div class="step-content">
-                    <h3>INVISIBLE DIAGNOSIS</h3>
+                    <h3 class="modal-trigger" data-modal="consensus-engine">THE CONSENSUS ENGINE</h3>
                     <p>Point camera at asset. AI overlays schematics, past repairs, and known faults.</p>
                 </div>
             </div>
@@ -286,7 +293,21 @@
             </form>
         </div>
     </section>
+    </section>
     </main>
+
+    <!-- Feature Modal -->
+    <div class="modal-overlay" id="feature-modal" aria-hidden="true">
+        <div class="modal-content glass-panel">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Feature Title</h2>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="industrial-footer" role="contentinfo">

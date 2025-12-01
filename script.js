@@ -410,23 +410,51 @@ if (!prefersReducedMotion) {
 if (!prefersReducedMotion) {
     const statNumbers = document.querySelectorAll('.stat-number');
 
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.dataset.target);
-
+    // Stats Counter Animation
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
         ScrollTrigger.create({
-            trigger: stat,
+            trigger: statsSection,
             start: "top 80%",
-            once: true,
             onEnter: () => {
-                gsap.to(stat, {
-                    innerText: target,
-                    duration: 2,
-                    snap: { innerText: 1 },
-                    ease: "power2.out"
+                // Standard counters
+                document.querySelectorAll('.stat-number:not(.health-value)').forEach(stat => {
+                    const target = parseFloat(stat.getAttribute('data-target'));
+                    gsap.to(stat, {
+                        innerHTML: target,
+                        duration: 2,
+                        snap: { innerHTML: 1 },
+                        ease: "power2.out"
+                    });
                 });
+
+                // Health Score Animation
+                const healthRing = document.querySelector('.ring-progress');
+                const healthValue = document.querySelector('.health-value');
+                
+                if (healthRing && healthValue) {
+                    const targetScore = 91;
+                    const circumference = 2 * Math.PI * 45; // r=45
+                    const offset = circumference - (targetScore / 100) * circumference;
+
+                    // Animate Ring
+                    gsap.to(healthRing, {
+                        strokeDashoffset: offset,
+                        duration: 2.5,
+                        ease: "power3.out"
+                    });
+
+                    // Animate Number
+                    gsap.to(healthValue, {
+                        innerHTML: targetScore,
+                        duration: 2.5,
+                        snap: { innerText: 1 },
+                        ease: "power3.out"
+                    });
+                }
             }
         });
-    });
+    }
 }
 
 // ============================================
@@ -526,6 +554,85 @@ if (terminalBtn) {
         e.preventDefault();
         if (window.siteSyncTerminal) {
             window.siteSyncTerminal.open();
+        }
+    });
+}
+
+// ============================================
+// 18. FEATURE MODALS
+// ============================================
+const modalData = {
+    "health-score": {
+        title: "Building Health Score",
+        body: `
+            <p>A real-time aggregate metric (0-100) representing the operational status of your building.</p>
+            <ul>
+                <li><strong>Compliance (30%):</strong> Are all inspections up to date?</li>
+                <li><strong>Asset Age (20%):</strong> Lifecycle status of critical equipment.</li>
+                <li><strong>Fix Rate (30%):</strong> Average time to resolve reported faults.</li>
+                <li><strong>User Feedback (20%):</strong> Tenant satisfaction scores.</li>
+            </ul>
+            <p>Scores above 90 qualify for insurance premium reductions.</p>
+        `
+    },
+    "consensus-engine": {
+        title: "The Consensus Engine",
+        body: `
+            <p>Our "Triforce" architecture eliminates AI hallucinations by requiring agreement from multiple frontier models.</p>
+            <ul>
+                <li><strong>Step 1:</strong> Gemini 1.5 Pro analyzes the visual fault.</li>
+                <li><strong>Step 2:</strong> Claude 3.5 Sonnet verifies the diagnosis against the manual.</li>
+                <li><strong>Step 3:</strong> GPT-4o acts as the "Judge" to finalize the work order.</li>
+            </ul>
+        `
+    }
+};
+
+const modal = document.getElementById('feature-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
+const closeBtn = document.querySelector('.modal-close');
+
+function openModal(key) {
+    const data = modalData[key];
+    if (!data) return;
+
+    modalTitle.textContent = data.title;
+    modalBody.innerHTML = data.body;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+// Event Listeners
+document.querySelectorAll('[data-modal]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Stop propagation to prevent immediate closing if inside modal (unlikely but safe)
+        e.stopPropagation();
+        openModal(trigger.dataset.modal);
+    });
+});
+
+if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+}
+
+if (modal) {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    
+    // Close on ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
         }
     });
 }
