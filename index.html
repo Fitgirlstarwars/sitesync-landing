@@ -38,6 +38,26 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="terminal.css">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="assets/textures.svg" as="image" type="image/svg+xml">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SiteSync",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Your Building. Your Data. Your Intelligence. Contractors come and go — your building remembers forever."
+    }
+    </script>
 </head>
 <body>
     <!-- Skip Link for Accessibility -->
@@ -49,17 +69,16 @@
             <span class="mark" aria-hidden="true">◈</span>
             <span class="text">SITESYNC</span>
         </div>
-        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <!-- Hamburger removed for Command Bar -->
         <div class="nav-links">
             <a href="platform.html">THE PLATFORM</a>
             <a href="buildings.html">FOR BUILDINGS</a>
             <a href="technicians.html">FOR TECHNICIANS</a>
         </div>
-        <button class="cta-btn" aria-label="Access the SiteSync terminal">INFORMATION TERMINAL</button>
+        <button class="cta-btn terminal-trigger" aria-label="Access the SiteSync terminal">
+            <span class="desktop-text">INFORMATION TERMINAL</span>
+            <span class="mobile-text">&gt;_</span>
+        </button>
     </nav>
 
     <main id="main-content">
@@ -280,24 +299,24 @@
                 <div class="footer-nav">
                     <div class="footer-col">
                         <h4>PRODUCT</h4>
-                        <a href="coming_soon.html">Features</a>
-                        <a href="coming_soon.html">Pricing</a>
-                        <a href="coming_soon.html">Integrations</a>
-                        <a href="coming_soon.html">API</a>
+                        <!-- <a href="coming_soon.html">Features</a> -->
+                        <!-- <a href="coming_soon.html">Pricing</a> -->
+                        <!-- <a href="coming_soon.html">Integrations</a> -->
+                        <!-- <a href="coming_soon.html">API</a> -->
                     </div>
                     <div class="footer-col">
                         <h4>COMPANY</h4>
-                        <a href="coming_soon.html">About</a>
-                        <a href="coming_soon.html">Careers</a>
-                        <a href="coming_soon.html">Blog</a>
-                        <a href="coming_soon.html">Contact</a>
+                        <a href="about.html">About</a>
+                        <!-- <a href="coming_soon.html">Careers</a> -->
+                        <!-- <a href="coming_soon.html">Blog</a> -->
+                        <!-- <a href="coming_soon.html">Contact</a> -->
                     </div>
                     <div class="footer-col">
                         <h4>RESOURCES</h4>
-                        <a href="coming_soon.html">Documentation</a>
-                        <a href="coming_soon.html">Support</a>
-                        <a href="coming_soon.html">Status</a>
-                        <a href="coming_soon.html">Security</a>
+                        <!-- <a href="coming_soon.html">Documentation</a> -->
+                        <!-- <a href="coming_soon.html">Support</a> -->
+                        <a href="https://status.liftsmith.xyz">Status</a>
+                        <!-- <a href="coming_soon.html">Security</a> -->
                     </div>
                 </div>
             </div>
@@ -305,9 +324,9 @@
                 <div class="footer-legal">
                     <small>© 2025 SiteSync Industrial Intelligence. All rights reserved.</small>
                     <div class="legal-links">
-                        <a href="coming_soon.html">Privacy</a>
-                        <a href="coming_soon.html">Terms</a>
-                        <a href="coming_soon.html">Cookies</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
                     </div>
                 </div>
                 <div class="trust-badges">

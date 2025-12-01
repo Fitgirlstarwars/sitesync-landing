@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | SiteSync Industrial Intelligence</title>
+    <meta name="description" content="The philosophy behind SiteSync. Industrial design meets digital permanence.">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About | SiteSync Industrial Intelligence">
+    <meta property="og:description" content="The philosophy behind SiteSync. Industrial design meets digital permanence.">
+    <meta property="og:url" content="https://liftsmith.xyz/about">
+    <meta property="og:image" content="https://liftsmith.xyz/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#1a1a1a">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <style>
+        .about-hero {
+            padding: 15vh 5vw 10vh;
+            background: var(--concrete-bg);
+            background-image: url('assets/textures.svg#concrete');
+            background-blend-mode: overlay;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .tech-badge {
+            border: 1px solid #444;
+            padding: 0.5rem 1rem;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: #888;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="page-about">
+    <!-- Navigation -->
+    <nav class="steel-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="brand">
+            <span class="mark" aria-hidden="true">◈</span>
+            <span class="text">SITESYNC</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#system">THE SYSTEM</a>
+            <a href="buildings.html">FOR BUILDINGS</a>
+            <a href="technicians.html">FOR TECHNICIANS</a>
+        </div>
+        <button class="cta-btn terminal-trigger" aria-label="Access the SiteSync terminal">
+            <span class="desktop-text">TERMINAL</span>
+            <span class="mobile-text">&gt;_</span>
+        </button>
+    </nav>
+
+    <main id="main-content">
+        <section class="about-hero">
+            <h1 class="massive-type">INDUSTRIAL<br>INTELLIGENCE</h1>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>THE PHILOSOPHY</h2>
+                    <p>SiteSync was born from a simple observation: <strong>Buildings are permanent. Service is transient.</strong></p>
+                    <p>In the physical world, we build with concrete, steel, and stone. Materials designed to outlast us. Yet in the digital layer of facility management, data is fragile. It lives in silos, disappears with vendors, and rots in filing cabinets.</p>
+                    <p>We designed SiteSync to be the digital equivalent of a steel beam. Strong. Permanent. Essential.</p>
+                </div>
+                <div class="about-text">
+                    <h2>THE DESIGN</h2>
+                    <p>Our aesthetic reflects our function. We stripped away the corporate gloss of typical SaaS marketing.</p>
+                    <p><strong>Concrete Textures:</strong> Representing the foundation. The unmovable history of the building.</p>
+                    <p><strong>Industrial Orange:</strong> The color of safety vests and high-voltage warnings. Actionable and urgent.</p>
+                    <p><strong>Monospace Type:</strong> The language of data, schematics, and raw truth.</p>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>THE STACK</h2>
+                    <p>Built for performance and longevity. No bloated frameworks. Just raw, efficient code.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3 Variables</span>
+                        <span class="tech-badge">Vanilla JS</span>
+                        <span class="tech-badge">GSAP</span>
+                        <span class="tech-badge">Lenis Scroll</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>THE TEAM</h2>
+                    <p>Designed and engineered by <strong>Antigravity</strong> (Google DeepMind) in collaboration with the user.</p>
+                    <p>We believe software should feel as solid as the hardware it manages.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="industrial-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">◈ SITESYNC</span>
+                    <p class="footer-tagline">The Operating System for Building Services</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>PRODUCT</h4>
+                        <!-- <a href="coming_soon.html">Features</a> -->
+                        <!-- <a href="coming_soon.html">Pricing</a> -->
+                        <!-- <a href="coming_soon.html">Integrations</a> -->
+                        <!-- <a href="coming_soon.html">API</a> -->
+                    </div>
+                    <div class="footer-col">
+                        <h4>COMPANY</h4>
+                        <a href="about.html">About</a>
+                        <!-- <a href="coming_soon.html">Careers</a> -->
+                        <!-- <a href="coming_soon.html">Blog</a> -->
+                        <!-- <a href="coming_soon.html">Contact</a> -->
+                    </div>
+                    <div class="footer-col">
+                        <h4>RESOURCES</h4>
+                        <!-- <a href="coming_soon.html">Documentation</a> -->
+                        <!-- <a href="coming_soon.html">Support</a> -->
+                        <a href="https://status.liftsmith.xyz">Status</a>
+                        <!-- <a href="coming_soon.html">Security</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <small>© 2025 SiteSync Industrial Intelligence. All rights reserved.</small>
+                    <div class="legal-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <span class="badge">SOC 2</span>
+                    <span class="badge">GDPR</span>
+                    <span class="badge">ISO 27001</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="terminal.js"></script>
+</body>
+</html>

@@ -395,3 +395,37 @@
 @keyframes fadeIn {
     to { opacity: 1; }
 }
+
+/* ============================================
+   MOBILE STYLES
+   ============================================ */
+@media (max-width: 768px) {
+    .terminal-window {
+        width: 95%;
+        height: 80vh;
+        max-height: 80vh;
+    }
+
+    .terminal-body {
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    .keycap-container {
+        margin-top: 1rem;
+    }
+
+    .keycap-btn {
+        width: 50px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 12px;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}

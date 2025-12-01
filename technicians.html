@@ -33,6 +33,28 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="pages.css">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="assets/textures.svg" as="image" type="image/svg+xml">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://liftsmith.xyz"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "For Technicians",
+        "item": "https://liftsmith.xyz/technicians"
+      }]
+    }
+    </script>
 </head>
 <body class="page-technicians">
     <!-- Skip Link for Accessibility -->
@@ -44,11 +66,7 @@
             <span class="mark" aria-hidden="true">◈</span>
             <span class="text">SITESYNC</span>
         </a>
-        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <!-- Hamburger removed for Command Bar -->
         <div class="nav-links">
             <a href="index.html#system">THE SYSTEM</a>
             <a href="index.html#schematic">HOW IT WORKS</a>
@@ -453,24 +471,24 @@
                 <div class="footer-nav">
                     <div class="footer-col">
                         <h4>PRODUCT</h4>
-                        <a href="coming_soon.html">Features</a>
-                        <a href="coming_soon.html">Pricing</a>
-                        <a href="coming_soon.html">Integrations</a>
-                        <a href="coming_soon.html">API</a>
+                        <!-- <a href="coming_soon.html">Features</a> -->
+                        <!-- <a href="coming_soon.html">Pricing</a> -->
+                        <!-- <a href="coming_soon.html">Integrations</a> -->
+                        <!-- <a href="coming_soon.html">API</a> -->
                     </div>
                     <div class="footer-col">
                         <h4>SOLUTIONS</h4>
                         <a href="buildings.html">For Buildings</a>
                         <a href="technicians.html">For Technicians</a>
-                        <a href="coming_soon.html">Enterprise</a>
-                        <a href="coming_soon.html">Partners</a>
+                        <!-- <a href="coming_soon.html">Enterprise</a> -->
+                        <!-- <a href="coming_soon.html">Partners</a> -->
                     </div>
                     <div class="footer-col">
                         <h4>RESOURCES</h4>
-                        <a href="coming_soon.html">Documentation</a>
-                        <a href="coming_soon.html">Support</a>
-                        <a href="coming_soon.html">Status</a>
-                        <a href="coming_soon.html">Security</a>
+                        <!-- <a href="coming_soon.html">Documentation</a> -->
+                        <!-- <a href="coming_soon.html">Support</a> -->
+                        <a href="https://status.liftsmith.xyz">Status</a>
+                        <!-- <a href="coming_soon.html">Security</a> -->
                     </div>
                 </div>
             </div>
@@ -478,9 +496,9 @@
                 <div class="footer-legal">
                     <small>© 2025 SiteSync Industrial Intelligence. All rights reserved.</small>
                     <div class="legal-links">
-                        <a href="coming_soon.html">Privacy</a>
-                        <a href="coming_soon.html">Terms</a>
-                        <a href="coming_soon.html">Cookies</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
                     </div>
                 </div>
                 <div class="trust-badges">
@@ -492,7 +510,40 @@
         </div>
     </footer>
 
+    <!-- Command Bar (Mobile Only) -->
+    <nav class="command-bar" style="display: none;"> <!-- Hidden by default, shown via media query -->
+        <a href="index.html" class="cmd-link">
+            <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+            <span>HOME</span>
+        </a>
+        <a href="platform.html" class="cmd-link">
+            <svg viewBox="0 0 24 24"><path d="M2 12h2v9H2v-9zm3 2h2v7H5v-7zm3 2h2v5H8v-5zm3 2h2v3h-2v-3zm3 2h2v1h-2v-1zM2 9h20v2H2V9zm9-6h2v5h-2V3z"/></svg>
+            <span>PLATFORM</span>
+        </a>
+        <a href="buildings.html" class="cmd-link">
+            <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+            <span>BUILDINGS</span>
+        </a>
+        <a href="technicians.html" class="cmd-link active">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+            <span>TECHS</span>
+        </a>
+        <button class="cmd-link terminal-trigger" style="background:none;border:none;padding:0;">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10l2.5 2L6 14l1.4 1.4L11.8 12 7.4 8.6 6 10zm4 6h6v2h-6z"/></svg>
+            <span>TERM</span>
+        </button>
+    </nav>
+
     <script src="script.js"></script>
-    <script src="pages.js"></script>
+    <script src="terminal.js"></script>
+    <script>
+        // Simple script to show command bar only on mobile
+        if (window.innerWidth <= 1024) {
+            document.querySelector('.command-bar').style.display = 'flex';
+        }
+        window.addEventListener('resize', () => {
+            document.querySelector('.command-bar').style.display = window.innerWidth <= 1024 ? 'flex' : 'none';
+        });
+    </script>
 </body>
 </html>

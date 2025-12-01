@@ -908,16 +908,33 @@
     .visual-box {
         width: 80px;
         height: 80px;
+        margin: 0 auto; /* Center visual on mobile */
+    }
+
+    .flow-content {
+        text-align: center; /* Center text on mobile */
+        justify-items: center;
+    }
+
+    .community-content {
+        text-align: center;
+    }
+
+    .community-features {
+        align-items: center; /* Center features */
+        text-align: left; /* Keep feature text left-aligned for readability */
     }
 }
 
 @media (max-width: 768px) {
     .page-hero {
         padding: 100px 5vw 60px;
+        min-height: auto; /* Allow content to dictate height on mobile */
     }
 
     .page-title {
         font-size: clamp(2.5rem, 10vw, 4rem);
+        word-break: break-word; /* Prevent overflow */
     }
 
     .hero-actions {

@@ -1,0 +1,79 @@
+# SiteSync V3
+
+> AI-Native Building Services Operating System. Buildings own their service history permanently. Workers build portable reputations. AI assists invisibly. Version 3.0.0 | December 2025
+
+## Quick Start (Read First)
+
+- [CLAUDE.md](CLAUDE.md): Concise project context (~70 lines, 800 tokens)
+- [AI Context](AI_CONTEXT.md): Essential AI context (~220 lines, 2500 tokens)
+- [Glossary](docs/GLOSSARY.md): Consistent terminology (~350 lines, 3000 tokens)
+- [Complete Reference](CLAUDE_CODE_GUIDE.md): Full technical reference (~1450 lines, 15000 tokens)
+
+Machine-readable manifest: [.llm-manifest.json](.llm-manifest.json)
+Full documentation dump: [llms-full.txt](llms-full.txt)
+
+## Core Documentation
+
+- [Data Model](docs/reference/data-model.md): Database schemas, SQL, Pydantic models (~12000 tokens)
+- [Triforce AI](docs/explanation/triforce-ai.md): Multi-model AI architecture (~10000 tokens)
+- [API Reference](docs/reference/api.md): REST API endpoints (~9000 tokens)
+- [Architecture](docs/reference/architecture.md): System design (~4000 tokens)
+- [Enums](docs/reference/enums.md): Status codes and constants (~2500 tokens)
+
+## Concept Explanations
+
+- [Vision](docs/explanation/vision.md): Core philosophy (~3000 tokens)
+- [For Buildings](docs/explanation/for-buildings.md): Building value prop (~4000 tokens)
+- [For Technicians](docs/explanation/for-technicians.md): Tech value prop (~4000 tokens)
+- [Platform Ecosystem](docs/explanation/platform-ecosystem.md): How parts connect (~3500 tokens)
+- [Security](docs/explanation/security-compliance.md): Security framework (~4000 tokens)
+
+## Tutorials
+
+- [Quick Start](docs/tutorials/quick-start.md): Onboarding guide (~8000 tokens)
+- [Add Assets](docs/tutorials/add-assets.md): Register equipment (~2000 tokens)
+- [Work Orders](docs/tutorials/work-orders.md): Job management (~3000 tokens)
+- [AI Diagnosis](docs/tutorials/ai-diagnosis.md): Using Triforce (~2500 tokens)
+
+## How-To Guides
+
+- [Data Migration](docs/how-to/data-migration.md): Import records (~3000 tokens)
+- [Switch Contractors](docs/how-to/switch-contractors.md): Change providers (~1500 tokens)
+- [Compliance Tracking](docs/how-to/compliance-tracking.md): Inspections (~2000 tokens)
+
+## Optional
+
+These documents provide additional context but are not required for most tasks:
+
+- [FAQ](docs/faq.md): Common questions (~3000 tokens)
+- [Implementation Patterns](docs/reference/implementation.md): Code patterns (~5000 tokens)
+- [Feature Specs](docs/reference/features.md): Detailed features (~6000 tokens)
+- [UI/UX Spec](docs/reference/ui-ux-spec.md): Design system (~4000 tokens)
+- [Quick Reference](docs/reference/quick-reference.md): Cheatsheet (~3000 tokens)
+- [Market Strategy](docs/strategy/market-strategy.md): GTM plan (~5000 tokens)
+- [Enterprise](docs/enterprise/facilities-management.md): Portfolio features (~4000 tokens)
+- [Changelog](docs/CHANGELOG.md): Documentation history (~800 tokens)
+- [AI Research](docs/AI_DOCUMENTATION_RESEARCH.md): LLM best practices (~4000 tokens)
+
+## Key Terminology
+
+| Term | Definition |
+|------|------------|
+| Organization | Multi-tenant root entity (a company) |
+| Site | A building or location |
+| Elevator | Equipment asset (lift) |
+| Work Order | A job/task to perform |
+| Contractor | Service provider |
+| Triforce AI | Multi-model consensus system |
+
+## Technology Stack
+
+- Database: PostgreSQL 16+ with RLS, pgvector
+- Backend: FastAPI, Python 3.12+
+- Frontend: React 18, TypeScript, TanStack Query
+- AI: Triforce (Gemini + Claude + GPT-4), Pydantic AI
+- Infrastructure: GCP Cloud Run
+
+## Total Documentation
+
+~116,000 tokens across 31 documents. See llms-full.txt for complete dump.

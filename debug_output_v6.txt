@@ -1,0 +1,29 @@
+Opening file:///Users/fender/Desktop/website/index.html
+CONSOLE: SiteSync Terminal v4.0 loaded
+CONSOLE: SiteSync v2.0 loaded | Smooth scroll: true
+Clicking terminal button...
+Waiting for animation (60s)...
+Screenshot saved to terminal_debug_v2.png
+Terminal Body HTML:
+<div class="terminal-line "></div><div class="terminal-line highlight">THE PROBLEM:</div><div class="terminal-line ">Every time a contractor leaves, your building loses its memory.</div><div class="terminal-line ">Critical knowledge stays with the service provider.</div><div class="terminal-line "></div><div class="terminal-line success">THE SOLUTION:</div><div class="terminal-line ">One platform connecting Buildings, Trades, and AI.</div><div class="terminal-line info">1. PERMANENT MEMORY</div><div class="terminal-line ">   Data stays with the building, forever.</div><div class="terminal-line info">2. SHARED INTELLIGENCE</div><div class="terminal-line ">   When one technician solves a problem, the entire network learns.</div><div class="terminal-line info">3. TOTAL OVERSIGHT</div><div class="terminal-line ">   Command the pulse of your building. Every trade, every asset, every moment.</div><div class="terminal-line "></div><div class="terminal-line accent">Your Building. Your Data.</div><div class="audience-grid">
+                        <div class="audience-col">
+                            <div class="audience-header">FOR BUILDINGS</div>
+                            <div class="audience-text">Stop losing your history every time you switch contracts. Gain total control.</div>
+                            <ul class="audience-list">
+                                <li>Permanent Ledger</li>
+                                <li>Vendor Independence</li>
+                                <li>Predictive Health</li>
+                            </ul>
+                            <a href="./buildings.html" class="audience-btn">DISCOVER MORE</a>
+                        </div>
+                        <div class="audience-col">
+                            <div class="audience-header">FOR TECHNICIANS</div>
+                            <div class="audience-text">Your skill is your currency. Stop being invisible. Get recognized for every fix.</div>
+                            <ul class="audience-list">
+                                <li>Verified Profile</li>
+                                <li>Career Portability</li>
+                                <li>Community Wisdom</li>
+                            </ul>
+                            <a href="./technicians.html" class="audience-btn">LEARN MORE</a>
+                        </div>
+                    </div><div class="keycap-container"><div class="keycap-btn"><span>ESC</span></div></div>

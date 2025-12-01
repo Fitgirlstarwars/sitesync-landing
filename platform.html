@@ -1098,6 +1098,13 @@
         // Stats counter animation
         const stats = document.querySelectorAll('.stat-value');
         const statsObserver = new IntersectionObserver((entries) => {
+           // Simple script to show command bar only on mobile
+        if (window.innerWidth <= 1024) {
+            document.querySelector('.command-bar').style.display = 'flex';
+        }
+        window.addEventListener('resize', () => {
+            document.querySelector('.command-bar').style.display = window.innerWidth <= 1024 ? 'flex' : 'none';
+        });
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = parseInt(entry.target.dataset.target);

@@ -1,0 +1,15 @@
+Opening file:///Users/fender/Desktop/website/index.html
+CONSOLE: SiteSync Terminal v4.0 loaded
+CONSOLE: SiteSync v2.0 loaded | Smooth scroll: true
+Clicking terminal button...
+CONSOLE: Processing scene {lines: Array(4)}
+CONSOLE: Processing line {text: , pause: 100}
+Waiting for animation (20s)...
+Traceback (most recent call last):
+  File "/Users/fender/Desktop/website/verify_terminal.py", line 42, in <module>
+    run()
+    ~~~^^
+  File "/Users/fender/Desktop/website/verify_terminal.py", line 26, in run
+    time.sleep(20)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt

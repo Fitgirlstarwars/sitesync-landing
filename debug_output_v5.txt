@@ -1,0 +1,88 @@
+Opening file:///Users/fender/Desktop/website/index.html
+CONSOLE: SiteSync Terminal v4.0 loaded
+CONSOLE: SiteSync v2.0 loaded | Smooth scroll: true
+Clicking terminal button...
+CONSOLE: Processing scene {lines: Array(4)}
+CONSOLE: Processing line {text: , pause: 100}
+CONSOLE: Starting typeLine: ""
+CONSOLE: Finished typeLine: ""
+CONSOLE: Starting wait: 100ms
+Waiting for animation (60s)...
+CONSOLE: Finished wait: 100ms
+CONSOLE: Processing line {text: THE PROBLEM:, style: highlight}
+CONSOLE: Starting typeLine: "THE PROBLEM:"
+CONSOLE: Finished typeLine: "THE PROBLEM:"
+CONSOLE: Starting wait: 300ms
+CONSOLE: Finished wait: 300ms
+CONSOLE: Processing line {text: Every time a contractor leaves, your building loses its memory., pause: 800}
+CONSOLE: Starting typeLine: "Every time a contractor leaves, your building loses its memory."
+CONSOLE: Finished typeLine: "Every time a contractor leaves, your building loses its memory."
+CONSOLE: Starting wait: 800ms
+CONSOLE: Finished wait: 800ms
+CONSOLE: Processing line {text: Critical knowledge stays with the service provider., pause: 1500}
+CONSOLE: Starting typeLine: "Critical knowledge stays with the service provider."
+CONSOLE: Finished typeLine: "Critical knowledge stays with the service provider."
+CONSOLE: Starting wait: 1500ms
+CONSOLE: Finished wait: 1500ms
+CONSOLE: Processing scene {lines: Array(9)}
+CONSOLE: Processing line {text: , pause: 500}
+CONSOLE: Starting typeLine: ""
+CONSOLE: Finished typeLine: ""
+CONSOLE: Starting wait: 500ms
+CONSOLE: Finished wait: 500ms
+CONSOLE: Processing line {text: THE SOLUTION:, style: success}
+CONSOLE: Starting typeLine: "THE SOLUTION:"
+CONSOLE: Finished typeLine: "THE SOLUTION:"
+CONSOLE: Starting wait: 300ms
+CONSOLE: Finished wait: 300ms
+CONSOLE: Processing line {text: One platform connecting Buildings, Trades, and AI., pause: 1000}
+CONSOLE: Starting typeLine: "One platform connecting Buildings, Trades, and AI."
+CONSOLE: Finished typeLine: "One platform connecting Buildings, Trades, and AI."
+CONSOLE: Starting wait: 1000ms
+CONSOLE: Finished wait: 1000ms
+CONSOLE: Processing line {text: 1. PERMANENT MEMORY, style: info}
+CONSOLE: Starting typeLine: "1. PERMANENT MEMORY"
+CONSOLE: Finished typeLine: "1. PERMANENT MEMORY"
+CONSOLE: Starting wait: 300ms
+CONSOLE: Finished wait: 300ms
+CONSOLE: Processing line {text:    Data stays with the building, forever.}
+CONSOLE: Starting typeLine: "   Data stays with the building, forever."
+CONSOLE: Finished typeLine: "   Data stays with the building, forever."
+CONSOLE: Starting wait: 300ms
+CONSOLE: Finished wait: 300ms
+CONSOLE: Processing line {text: 2. SHARED INTELLIGENCE, style: info}
+CONSOLE: Starting typeLine: "2. SHARED INTELLIGENCE"
+CONSOLE: Finished typeLine: "2. SHARED INTELLIGENCE"
+CONSOLE: Starting wait: 300ms
+CONSOLE: Finished wait: 300ms
+CONSOLE: Processing line {text:    When one technician solves a problem, the entire network learns.}
+CONSOLE: Starting typeLine: "   When one technician solves a problem, the entire network learns."
+CONSOLE: Finished typeLine: "   When one technician solves a problem, the entire network learns."
+CONSOLE: Starting wait: 300ms
+CONSOLE: Finished wait: 300ms
+CONSOLE: Processing line {text: 3. TOTAL OVERSIGHT, style: info}
+CONSOLE: Starting typeLine: "3. TOTAL OVERSIGHT"
+CONSOLE: Finished typeLine: "3. TOTAL OVERSIGHT"
+CONSOLE: Starting wait: 300ms
+CONSOLE: Finished wait: 300ms
+CONSOLE: Processing line {text:    Command the pulse of your building. Every trade, every asset, every moment., pause: 2000}
+CONSOLE: Starting typeLine: "   Command the pulse of your building. Every trade, every asset, every moment."
+CONSOLE: Finished typeLine: "   Command the pulse of your building. Every trade, every asset, every moment."
+CONSOLE: Starting wait: 2000ms
+CONSOLE: Finished wait: 2000ms
+CONSOLE: Processing scene {lines: Array(2)}
+CONSOLE: Processing line {text: , pause: 500}
+CONSOLE: Starting typeLine: ""
+CONSOLE: Finished typeLine: ""
+CONSOLE: Starting wait: 500ms
+CONSOLE: Finished wait: 500ms
+CONSOLE: Processing line {text: Your Building. Your Data., style: accent, pause: 1000}
+CONSOLE: Starting typeLine: "Your Building. Your Data."
+CONSOLE: Finished typeLine: "Your Building. Your Data."
+CONSOLE: Starting wait: 1000ms
+CONSOLE: Finished wait: 1000ms
+CONSOLE: Processing scene {custom: }
+CONSOLE: Processing scene {custom: }
+Screenshot saved to terminal_debug_v2.png
+Terminal Body HTML:
+<div class="terminal-line "></div><div class="terminal-line highlight">THE PROBLEM:</div><div class="terminal-line ">Every time a contractor leaves, your building loses its memory.</div><div class="terminal-line ">Critical knowledge stays with the service provider.</div><div class="terminal-line "></div><div class="terminal-line success">THE SOLUTION:</div><div class="terminal-line ">One platform connecting Buildings, Trades, and AI.</div><div class="terminal-line info">1. PERMANENT MEMORY</div><div class="terminal-line ">   Data stays with the building, forever.</div><div class="terminal-line info">2. SHARED INTELLIGENCE</div><div class="terminal-line ">   When one technician solves a problem, the entire network learns.</div><div class="terminal-line info">3. TOTAL OVERSIGHT</div><div class="terminal-line ">   Command the pulse of your building. Every trade, every asset, every moment.</div><div class="terminal-line "></div><div class="terminal-line accent">Your Building. Your Data.</div>
