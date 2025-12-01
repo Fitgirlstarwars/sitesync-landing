@@ -273,6 +273,11 @@ h1, h2, h3 {
     gap: 2rem;
 }
 
+.section-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .grid-item {
     padding: 3rem;
     position: relative;
