@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Platform | SiteSync Industrial Intelligence</title>
+    <meta name="description" content="Discover how SiteSync connects buildings, technicians, and AI into one powerful ecosystem. See how data flows and everyone wins.">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Platform | SiteSync Industrial Intelligence">
+    <meta property="og:description" content="One platform. Infinite connections. See how the ecosystem works.">
+    <meta property="og:url" content="https://liftsmith.xyz/platform">
+    <meta property="og:image" content="https://liftsmith.xyz/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#1a1a1a">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="platform.css">
+</head>
+<body class="page-platform">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="steel-nav" role="navigation" aria-label="Main navigation">
+        <a href="/" class="brand">
+            <span class="mark" aria-hidden="true">◈</span>
+            <span class="text">SITESYNC</span>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-links">
+            <a href="/">HOME</a>
+            <a href="/buildings">FOR BUILDINGS</a>
+            <a href="/technicians">FOR TECHNICIANS</a>
+        </div>
+        <a href="/#cta-section" class="cta-btn">GET STARTED</a>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="platform-hero">
+            <div class="grid-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge">THE ECOSYSTEM</span>
+                <h1 class="platform-title">
+                    <span class="line-wrapper"><span class="line-inner">ONE PLATFORM.</span></span>
+                    <span class="line-wrapper"><span class="line-inner">INFINITE CONNECTIONS.</span></span>
+                </h1>
+                <p class="hero-lead">
+                    See how buildings, technicians, and AI work together<br>
+                    to create an industry that never forgets.
+                </p>
+            </div>
+            <div class="scroll-indicator">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Pinned Ecosystem Section -->
+        <section class="ecosystem-section">
+            <div class="ecosystem-container">
+                <!-- SVG Ecosystem Diagram -->
+                <div class="ecosystem-diagram">
+                    <!-- Grid Background -->
+                    <div class="diagram-grid"></div>
+
+                    <!-- Connection Lines (SVG) -->
+                    <svg class="connection-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+                        <!-- Building to Core -->
+                        <path class="connection-line line-building-core"
+                              d="M200,150 Q400,150 400,300"
+                              fill="none" stroke="url(#lineGradient)" stroke-width="2"/>
+                        <!-- Technician to Core -->
+                        <path class="connection-line line-tech-core"
+                              d="M600,150 Q400,150 400,300"
+                              fill="none" stroke="url(#lineGradient)" stroke-width="2"/>
+                        <!-- Core to AI -->
+                        <path class="connection-line line-core-ai"
+                              d="M400,340 L400,420"
+                              fill="none" stroke="url(#lineGradient)" stroke-width="2"/>
+                        <!-- AI to Community -->
+                        <path class="connection-line line-ai-community"
+                              d="M400,480 L400,540"
+                              fill="none" stroke="url(#lineGradient)" stroke-width="2"/>
+                        <!-- Community feedback loops -->
+                        <path class="connection-line line-feedback-left"
+                              d="M320,540 Q100,400 200,200"
+                              fill="none" stroke="url(#lineGradient)" stroke-width="1" opacity="0.5"/>
+                        <path class="connection-line line-feedback-right"
+                              d="M480,540 Q700,400 600,200"
+                              fill="none" stroke="url(#lineGradient)" stroke-width="1" opacity="0.5"/>
+
+                        <!-- Gradient Definition -->
+                        <defs>
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#e65100;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ff6d00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <!-- Nodes -->
+                    <div class="ecosystem-node node-building" data-node="building">
+                        <div class="node-icon">◈</div>
+                        <div class="node-label">BUILDINGS</div>
+                        <div class="node-pulse"></div>
+                    </div>
+
+                    <div class="ecosystem-node node-technician" data-node="technician">
+                        <div class="node-icon">★</div>
+                        <div class="node-label">TECHNICIANS</div>
+                        <div class="node-pulse"></div>
+                    </div>
+
+                    <div class="ecosystem-node node-core" data-node="core">
+                        <div class="node-icon">⬡</div>
+                        <div class="node-label">SITESYNC</div>
+                        <div class="node-pulse"></div>
+                    </div>
+
+                    <div class="ecosystem-node node-ai" data-node="ai">
+                        <div class="node-icon">⟁</div>
+                        <div class="node-label">AI ENGINE</div>
+                        <div class="node-pulse"></div>
+                    </div>
+
+                    <div class="ecosystem-node node-community" data-node="community">
+                        <div class="node-icon">◎</div>
+                        <div class="node-label">SHARED KNOWLEDGE</div>
+                        <div class="node-pulse"></div>
+                    </div>
+
+                    <!-- Data Particles -->
+                    <div class="data-particles">
+                        <span class="particle p1"></span>
+                        <span class="particle p2"></span>
+                        <span class="particle p3"></span>
+                        <span class="particle p4"></span>
+                        <span class="particle p5"></span>
+                        <span class="particle p6"></span>
+                    </div>
+                </div>
+
+                <!-- Scroll-Triggered Text Panels -->
+                <div class="ecosystem-panels">
+                    <div class="eco-panel panel-intro active" data-panel="intro">
+                        <span class="panel-number">01</span>
+                        <h2>THE FOUNDATION</h2>
+                        <p>A blueprint grid awaits. Every building, every technician, every repair—about to be connected in ways never before possible.</p>
+                    </div>
+
+                    <div class="eco-panel panel-building" data-panel="building">
+                        <span class="panel-number">02</span>
+                        <h2>BUILDINGS CONTRIBUTE</h2>
+                        <p>Every service call, every repair, every diagnostic—captured in a permanent ledger. The building owns its history forever.</p>
+                        <a href="/buildings" class="panel-link">Learn more →</a>
+                    </div>
+
+                    <div class="eco-panel panel-technician" data-panel="technician">
+                        <span class="panel-number">03</span>
+                        <h2>TECHNICIANS CONNECT</h2>
+                        <p>Skilled professionals bring expertise to every job. Their work is verified, their reputation grows, their knowledge is captured.</p>
+                        <a href="/technicians" class="panel-link">Learn more →</a>
+                    </div>
+
+                    <div class="eco-panel panel-core" data-panel="core">
+                        <span class="panel-number">04</span>
+                        <h2>THE CORE PROCESSES</h2>
+                        <p>SiteSync connects both sides. Data flows in, intelligence flows out. Every interaction makes the system smarter.</p>
+                    </div>
+
+                    <div class="eco-panel panel-complete" data-panel="complete">
+                        <span class="panel-number">05</span>
+                        <h2>EVERYONE WINS</h2>
+                        <p>AI learns from every repair. Community knowledge grows. Buildings get smarter. Technicians get recognized. The cycle continues.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="scroll-progress">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-markers">
+                    <span class="marker active" data-step="1"></span>
+                    <span class="marker" data-step="2"></span>
+                    <span class="marker" data-step="3"></span>
+                    <span class="marker" data-step="4"></span>
+                    <span class="marker" data-step="5"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Virtuous Cycle -->
+        <section class="cycle-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>THE VIRTUOUS CYCLE</h2>
+                </div>
+                <div class="cycle-visual">
+                    <svg class="cycle-svg" viewBox="0 0 400 400">
+                        <circle class="cycle-ring" cx="200" cy="200" r="150" fill="none" stroke="#333" stroke-width="2"/>
+                        <circle class="cycle-ring-progress" cx="200" cy="200" r="150" fill="none" stroke="url(#cycleGradient)" stroke-width="4" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="cycleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#e65100" />
+                                <stop offset="100%" style="stop-color:#ff6d00" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="cycle-steps">
+                        <div class="cycle-step step-1">
+                            <span class="step-num">1</span>
+                            <span class="step-text">Buildings add data</span>
+                        </div>
+                        <div class="cycle-step step-2">
+                            <span class="step-num">2</span>
+                            <span class="step-text">Platform learns</span>
+                        </div>
+                        <div class="cycle-step step-3">
+                            <span class="step-num">3</span>
+                            <span class="step-text">Technicians get smarter</span>
+                        </div>
+                        <div class="cycle-step step-4">
+                            <span class="step-num">4</span>
+                            <span class="step-text">Buildings benefit</span>
+                        </div>
+                    </div>
+                    <div class="cycle-center">
+                        <span class="center-icon">∞</span>
+                        <span class="center-text">REPEAT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Stats -->
+        <section class="impact-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>ECOSYSTEM IMPACT</h2>
+                </div>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">◈</div>
+                        <span class="impact-number" data-target="2847">0</span>
+                        <span class="impact-label">Buildings Connected</span>
+                        <p class="impact-desc">Properties with permanent memory</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">★</div>
+                        <span class="impact-number" data-target="12000">0</span>
+                        <span class="impact-label">Verified Technicians</span>
+                        <p class="impact-desc">Professionals building reputation</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">⟁</div>
+                        <span class="impact-number" data-target="156">0</span>
+                        <span class="impact-unit">K</span>
+                        <span class="impact-label">Repairs Logged</span>
+                        <p class="impact-desc">Growing the knowledge base</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">◎</div>
+                        <span class="impact-number" data-target="94">0</span>
+                        <span class="impact-unit">%</span>
+                        <span class="impact-label">First-Fix Rate</span>
+                        <p class="impact-desc">With ecosystem intelligence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="platform-cta">
+            <div class="section-container">
+                <h2>JOIN THE ECOSYSTEM</h2>
+                <p>Choose your path into the connected future of building services.</p>
+                <div class="cta-buttons">
+                    <a href="/buildings" class="cta-card cta-buildings">
+                        <span class="cta-icon">◈</span>
+                        <span class="cta-title">FOR BUILDINGS</span>
+                        <span class="cta-desc">Own your data forever</span>
+                    </a>
+                    <a href="/technicians" class="cta-card cta-technicians">
+                        <span class="cta-icon">★</span>
+                        <span class="cta-title">FOR TECHNICIANS</span>
+                        <span class="cta-desc">Build your reputation</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="industrial-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">◈ SITESYNC</span>
+                    <p class="footer-tagline">The Operating System for Building Services</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>PRODUCT</h4>
+                        <a href="/platform">Platform</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Integrations</a>
+                        <a href="#">API</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>SOLUTIONS</h4>
+                        <a href="/buildings">For Buildings</a>
+                        <a href="/technicians">For Technicians</a>
+                        <a href="#">Enterprise</a>
+                        <a href="#">Partners</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>RESOURCES</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Support</a>
+                        <a href="#">Status</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <small>© 2025 SiteSync Industrial Intelligence. All rights reserved.</small>
+                    <div class="legal-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <span class="badge">SOC 2</span>
+                    <span class="badge">GDPR</span>
+                    <span class="badge">ISO 27001</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="platform.js"></script>
+</body>
+</html>
