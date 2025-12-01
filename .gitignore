@@ -16,3 +16,5 @@ v1-backup/
 # IDE
 .vscode/
 .idea/
+.vercel
+.env*.local
