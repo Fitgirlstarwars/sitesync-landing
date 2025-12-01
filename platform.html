@@ -451,11 +451,12 @@
         }
 
         /* ============================================
-           HOW IT CONNECTS - Step by step
+           HOW IT CONNECTS - Premium Timeline
            ============================================ */
         .steps {
             padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 3rem);
             background: var(--bg-primary);
+            overflow: hidden;
         }
 
         .steps-header {
@@ -477,60 +478,208 @@
             letter-spacing: -0.02em;
         }
 
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+        /* Timeline Container */
+        .timeline {
+            max-width: 1100px;
             margin: 0 auto;
-        }
-
-        .step-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            padding: 2rem;
             position: relative;
-            transition: all 0.3s var(--ease-out);
         }
 
-        .step-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .step-number {
+        /* Horizontal connecting line - desktop */
+        .timeline::before {
+            content: '';
             position: absolute;
-            top: -1px;
-            left: -1px;
-            background: var(--accent);
-            color: white;
-            width: 40px;
-            height: 40px;
+            top: 60px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                var(--border-light) 10%,
+                var(--border-light) 90%,
+                transparent 100%);
+        }
+
+        .timeline-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-step {
+            text-align: center;
+            position: relative;
+        }
+
+        /* Step number circle */
+        .timeline-num {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1.5rem;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-light);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: var(--font-mono);
             font-weight: 700;
             font-size: 0.9rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s var(--ease-out);
         }
 
-        .step-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
+        .timeline-step:hover .timeline-num {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
-        .step-title {
-            font-size: 1rem;
+        /* Custom SVG icons */
+        .timeline-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .timeline-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent);
+            stroke-width: 1.5;
+            fill: none;
+            transition: all 0.3s;
+        }
+
+        .timeline-step:hover .timeline-icon {
+            border-color: var(--accent);
+            background: rgba(230, 81, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .timeline-step:hover .timeline-icon svg {
+            stroke: var(--accent-light);
+            transform: scale(1.1);
+        }
+
+        .timeline-title {
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.08em;
             margin-bottom: 0.75rem;
+            color: var(--text-primary);
         }
 
-        .step-desc {
-            font-size: 0.9rem;
+        .timeline-desc {
+            font-size: 0.85rem;
             color: var(--text-secondary);
             line-height: 1.6;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        /* Connecting arrows between steps */
+        .timeline-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 24px;
+            right: -0.75rem;
+            width: 12px;
+            height: 12px;
+            border-top: 2px solid var(--accent);
+            border-right: 2px solid var(--accent);
+            transform: rotate(45deg);
+            opacity: 0.4;
+        }
+
+        /* Mobile: Vertical timeline */
+        @media (max-width: 900px) {
+            .timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 23px;
+                right: auto;
+                width: 2px;
+                height: auto;
+                background: linear-gradient(180deg,
+                    transparent 0%,
+                    var(--border-light) 5%,
+                    var(--border-light) 95%,
+                    transparent 100%);
+            }
+
+            .timeline-steps {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .timeline-step {
+                display: grid;
+                grid-template-columns: 48px 1fr;
+                gap: 1.5rem;
+                text-align: left;
+            }
+
+            .timeline-num {
+                margin: 0;
+                grid-row: 1 / 3;
+            }
+
+            .timeline-icon {
+                margin: 0;
+                width: 56px;
+                height: 56px;
+            }
+
+            .timeline-content {
+                display: contents;
+            }
+
+            .timeline-desc {
+                max-width: none;
+                margin: 0;
+            }
+
+            .timeline-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .timeline-step {
+                grid-template-columns: 40px 1fr;
+                gap: 1rem;
+            }
+
+            .timeline-num {
+                width: 40px;
+                height: 40px;
+                font-size: 0.8rem;
+            }
+
+            .timeline::before {
+                left: 19px;
+            }
+
+            .timeline-icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .timeline-icon svg {
+                width: 22px;
+                height: 22px;
+            }
         }
 
         /* ============================================
@@ -814,40 +963,66 @@
             </div>
         </section>
 
-        <!-- How It Works - Steps -->
+        <!-- How It Works - Premium Timeline -->
         <section class="steps">
             <header class="steps-header">
                 <div class="steps-label">02 // THE PROCESS</div>
                 <h2 class="steps-title">How Data Flows Through the System</h2>
             </header>
 
-            <div class="steps-grid">
-                <div class="step-card">
-                    <span class="step-number">01</span>
-                    <div class="step-icon">📍</div>
-                    <h3 class="step-title">Technician Arrives</h3>
-                    <p class="step-desc">The app recognizes the building and instantly downloads its complete service history.</p>
-                </div>
+            <div class="timeline">
+                <div class="timeline-steps">
+                    <!-- Step 1: Arrive -->
+                    <div class="timeline-step">
+                        <div class="timeline-num">01</div>
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="timeline-title">ARRIVE</h3>
+                        <p class="timeline-desc">App recognizes the building. Full service history downloads instantly.</p>
+                    </div>
 
-                <div class="step-card">
-                    <span class="step-number">02</span>
-                    <div class="step-icon">📸</div>
-                    <h3 class="step-title">AI Diagnosis</h3>
-                    <p class="step-desc">Point camera at equipment. Get instant specs, history, and diagnostic suggestions.</p>
-                </div>
+                    <!-- Step 2: Scan -->
+                    <div class="timeline-step">
+                        <div class="timeline-num">02</div>
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                <circle cx="12" cy="13" r="4"/>
+                            </svg>
+                        </div>
+                        <h3 class="timeline-title">SCAN</h3>
+                        <p class="timeline-desc">Point camera at equipment. AI overlays specs, history, and diagnostics.</p>
+                    </div>
 
-                <div class="step-card">
-                    <span class="step-number">03</span>
-                    <div class="step-icon">🔧</div>
-                    <h3 class="step-title">Work Completed</h3>
-                    <p class="step-desc">Repair is documented automatically. Photos, notes, and parts used—all captured.</p>
-                </div>
+                    <!-- Step 3: Repair -->
+                    <div class="timeline-step">
+                        <div class="timeline-num">03</div>
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3 class="timeline-title">REPAIR</h3>
+                        <p class="timeline-desc">Complete the work. Photos, notes, and parts used—auto-documented.</p>
+                    </div>
 
-                <div class="step-card">
-                    <span class="step-number">04</span>
-                    <div class="step-icon">🔒</div>
-                    <h3 class="step-title">Data Secured</h3>
-                    <p class="step-desc">Report locked to the building's permanent ledger. Technician's profile updated.</p>
+                    <!-- Step 4: Secure -->
+                    <div class="timeline-step">
+                        <div class="timeline-num">04</div>
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                <circle cx="12" cy="16" r="1"/>
+                            </svg>
+                        </div>
+                        <h3 class="timeline-title">SECURE</h3>
+                        <p class="timeline-desc">Data locked to building ledger. Technician profile updated. Forever.</p>
+                    </div>
                 </div>
             </div>
         </section>
