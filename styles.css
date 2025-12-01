@@ -1481,6 +1481,7 @@ button:focus-visible {
 /* Mobile Terminal Trigger Positioning */
 @media (max-width: 1024px) {
     .cta-btn.terminal-trigger {
+        position: absolute; /* Fix: Ensure absolute positioning for top/right to work */
         right: 1rem !important; /* Move closer to right edge since hamburger is gone */
         left: auto !important;
         top: 50%; /* Revert to center */
