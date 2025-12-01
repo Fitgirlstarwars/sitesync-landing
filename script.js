@@ -516,3 +516,16 @@ if (hamburger && navLinks) {
 }
 
 console.log('SiteSync v2.0 loaded | Smooth scroll:', !prefersReducedMotion);
+
+// ============================================
+// 17. TERMINAL TOGGLE
+// ============================================
+const terminalBtn = document.querySelector('.cta-btn');
+if (terminalBtn) {
+    terminalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.siteSyncTerminal) {
+            window.siteSyncTerminal.open();
+        }
+    });
+}

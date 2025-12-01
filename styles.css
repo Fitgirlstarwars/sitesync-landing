@@ -206,12 +206,42 @@ h1, h2, h3 {
 /* Hero Section */
 .hero-section {
     height: 100vh;
-    background-image: var(--concrete-bg);
-    background-size: cover;
+    background-color: var(--concrete-bg);
+    /* Mix the concrete texture with a dramatic spotlight */
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.6) 90%),
+        url('assets/textures.svg#concrete');
+    background-blend-mode: overlay, normal;
+    background-size: cover, 200px 200px;
     display: flex;
     align-items: center;
     padding: 0 5vw;
     position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(230, 81, 0, 0.08) 0%, transparent 70%);
+    animation: pulseGlow 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
 }
 
 .grid-overlay {
@@ -221,10 +251,11 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
+    z-index: 1;
 }
 
 .hero-sub {
@@ -1087,5 +1118,26 @@ button:focus-visible {
 
     .split-side:hover {
         flex: 1;
+    }
+}
+
+/* ============================================
+   DEMO BUTTON IN NAV
+   ============================================ */
+.demo-btn-nav {
+    background: transparent;
+    border: 2px solid var(--accent-orange);
+    color: var(--accent-orange);
+    margin-right: 0.5rem;
+}
+
+.demo-btn-nav:hover {
+    background: var(--accent-orange);
+    color: var(--text-light);
+}
+
+@media (max-width: 900px) {
+    .demo-btn-nav {
+        display: none;
     }
 }
