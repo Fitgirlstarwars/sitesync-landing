@@ -1460,3 +1460,28 @@ button:focus-visible {
     color: var(--accent-orange);
 }
 .modal-trigger { cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px; transition: color 0.3s; } .modal-trigger:hover { color: var(--accent-orange); }
+/* Mobile Overrides for Platform Page */
+@media (max-width: 900px) {
+    .layer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .layer-visual {
+        height: 250px !important;
+        order: -1; /* Visual first on mobile */
+    }
+
+    .platform-hero {
+        height: 60vh !important;
+    }
+
+    .loop-container {
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    .layer-content h2 {
+        font-size: 2rem !important;
+    }
+}
