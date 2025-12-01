@@ -1505,3 +1505,19 @@ button:focus-visible {
         margin-left: 50px; /* Make space for the button */
     }
 }
+/* Mobile Hero Actions Fix */
+@media (max-width: 768px) {
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .hero-actions .cta-btn,
+    .hero-actions .ghost-btn {
+        width: 100%;
+        text-align: center;
+        display: block;
+        box-sizing: border-box;
+    }
+}
