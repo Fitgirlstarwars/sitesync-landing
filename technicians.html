@@ -63,40 +63,35 @@
     <!-- Navigation -->
     <nav class="steel-nav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="brand">
-            <span class="mark" aria-hidden="true">◈</span>
+            <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="none" stroke="#e65100" stroke-width="1.5"/><rect x="8" y="8" width="8" height="8" rx="0.5" transform="rotate(45 12 12)" fill="#e65100"/></svg>
             <span class="text">SITESYNC</span>
         </a>
         <!-- Hamburger removed for Command Bar -->
         <div class="nav-links">
             <a href="buildings.html">FOR BUILDINGS</a>
             <a href="technicians.html" class="active">FOR TECHNICIANS</a>
+            <a href="companies.html">FOR COMPANIES</a>
             <a href="platform.html">THE SYSTEM</a>
         </div>
-        <a href="#claim" class="cta-btn">CLAIM YOUR PROFILE</a>
     </nav>
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="page-hero tech-hero">
+        <section class="hero-section" aria-labelledby="hero-heading">
             <div class="grid-overlay"></div>
-            <div class="hero-content">
-                <span class="hero-badge">FOR TECHNICIANS</span>
-                <h1 class="page-title">
+            <div class="content-wrapper">
+                <h1 id="hero-heading" class="massive-type">
                     YOUR SKILL IS<br>
                     YOUR CURRENCY.
                 </h1>
-                <p class="hero-lead">
-                    Stop being invisible. Every fix, every diagnosis, every solution—<br>
-                    <strong>documented, verified, and portable.</strong>
-                </p>
-                <div class="hero-actions">
-                    <a href="#claim" class="cta-btn large">CLAIM YOUR PROFILE</a>
-                    <a href="#flow" class="ghost-btn">SEE THE BENEFITS</a>
+                <div class="hero-sub">
+                    <p>Every fix documented. Every solution verified. Fully portable.</p>
+                    <div class="specs">
+                        <span>FOR TECHNICIANS</span>
+                        <span>VERIFIED WORK</span>
+                        <span>YOUR REPUTATION</span>
+                    </div>
                 </div>
-            </div>
-            <div class="scroll-indicator">
-                <span>SCROLL</span>
-                <div class="scroll-line"></div>
             </div>
         </section>
 
@@ -180,11 +175,226 @@
             </div>
         </section>
 
+        <!-- Career Ladder Section -->
+        <section class="career-ladder-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>03 // YOUR JOURNEY</h2>
+                </div>
+                <div class="career-ladder-content">
+                    <div class="ladder-intro">
+                        <h3>CLIMB THE LADDER</h3>
+                        <p>Every technician starts somewhere. Your SiteSync expertise score (0-100) unlocks new tiers, opportunities, and recognition as you grow.</p>
+                    </div>
+                    <div class="career-ladder">
+                        <div class="ladder-rail"></div>
+                        <div class="ladder-tier tier-legend" data-tier="5">
+                            <div class="tier-marker">
+                                <span class="tier-icon">👑</span>
+                            </div>
+                            <div class="tier-content">
+                                <div class="tier-header">
+                                    <span class="tier-score">95-100</span>
+                                    <h4>INDUSTRY LEGEND</h4>
+                                </div>
+                                <p>Top 1% globally. Thousands helped. Legacy impact. Industry shaping.</p>
+                                <div class="tier-perks">
+                                    <span>Speaking invitations</span>
+                                    <span>Advisory roles</span>
+                                    <span>Premium contracts</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ladder-tier tier-master" data-tier="4">
+                            <div class="tier-marker">
+                                <span class="tier-icon">★</span>
+                            </div>
+                            <div class="tier-content">
+                                <div class="tier-header">
+                                    <span class="tier-score">80-94</span>
+                                    <h4>MASTER TECHNICIAN</h4>
+                                </div>
+                                <p>Industry expert. Major contributor. Premium opportunities. Mentor to many.</p>
+                                <div class="tier-perks">
+                                    <span>Priority job access</span>
+                                    <span>Mentorship badge</span>
+                                    <span>Employer visibility</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ladder-tier tier-expert" data-tier="3">
+                            <div class="tier-marker">
+                                <span class="tier-icon">◈</span>
+                            </div>
+                            <div class="tier-content">
+                                <div class="tier-header">
+                                    <span class="tier-score">60-79</span>
+                                    <h4>TRUSTED EXPERT</h4>
+                                </div>
+                                <p>Go-to specialist. Sought by employers. Regular contributor. Growing reputation.</p>
+                                <div class="tier-perks">
+                                    <span>Verified badge</span>
+                                    <span>Job matching</span>
+                                    <span>Analytics access</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ladder-tier tier-rising" data-tier="2">
+                            <div class="tier-marker">
+                                <span class="tier-icon">◇</span>
+                            </div>
+                            <div class="tier-content">
+                                <div class="tier-header">
+                                    <span class="tier-score">40-59</span>
+                                    <h4>RISING STAR</h4>
+                                </div>
+                                <p>Contributing to the community. Building your profile. Getting noticed.</p>
+                                <div class="tier-perks">
+                                    <span>Profile visibility</span>
+                                    <span>Community access</span>
+                                    <span>First badges</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ladder-tier tier-apprentice" data-tier="1">
+                            <div class="tier-marker">
+                                <span class="tier-icon">○</span>
+                            </div>
+                            <div class="tier-content">
+                                <div class="tier-header">
+                                    <span class="tier-score">0-39</span>
+                                    <h4>APPRENTICE</h4>
+                                </div>
+                                <p>Learning the ropes. Building history. Absorbing wisdom. Starting your journey.</p>
+                                <div class="tier-perks">
+                                    <span>Free profile</span>
+                                    <span>Knowledge access</span>
+                                    <span>Job logging</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievement Badges Section -->
+        <section class="badges-section">
+            <div class="section-container">
+                <div class="badges-header">
+                    <h3>EARN YOUR STRIPES</h3>
+                    <p>Badges are earned through real work—not self-reported claims. Each one tells a story of verified accomplishment.</p>
+                </div>
+                <div class="badge-categories">
+                    <div class="badge-category">
+                        <h4><span class="cat-icon">🔧</span> EXPERIENCE</h4>
+                        <div class="badge-list">
+                            <div class="badge-item">
+                                <span class="badge-icon">🔧</span>
+                                <span class="badge-name">First 100</span>
+                                <span class="badge-req">100 jobs</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-icon">🔧</span>
+                                <span class="badge-name">Century Club</span>
+                                <span class="badge-req">500 jobs</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-icon">🔧</span>
+                                <span class="badge-name">Thousand Master</span>
+                                <span class="badge-req">1,000 jobs</span>
+                            </div>
+                            <div class="badge-item featured">
+                                <span class="badge-icon">🔧</span>
+                                <span class="badge-name">Veteran</span>
+                                <span class="badge-req">5,000+ jobs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badge-category">
+                        <h4><span class="cat-icon">🎯</span> QUALITY</h4>
+                        <div class="badge-list">
+                            <div class="badge-item">
+                                <span class="badge-icon">🎯</span>
+                                <span class="badge-name">Reliable</span>
+                                <span class="badge-req">85% first-fix</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-icon">🎯</span>
+                                <span class="badge-name">Expert</span>
+                                <span class="badge-req">90% first-fix</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-icon">🎯</span>
+                                <span class="badge-name">Master</span>
+                                <span class="badge-req">95% first-fix</span>
+                            </div>
+                            <div class="badge-item featured">
+                                <span class="badge-icon">🎯</span>
+                                <span class="badge-name">Perfect</span>
+                                <span class="badge-req">99% first-fix</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badge-category">
+                        <h4><span class="cat-icon">💡</span> CONTRIBUTION</h4>
+                        <div class="badge-list">
+                            <div class="badge-item">
+                                <span class="badge-icon">💡</span>
+                                <span class="badge-name">Helper</span>
+                                <span class="badge-req">10 tips shared</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-icon">💡</span>
+                                <span class="badge-name">Problem Solver</span>
+                                <span class="badge-req">25 tips shared</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-icon">💡</span>
+                                <span class="badge-name">Knowledge Keeper</span>
+                                <span class="badge-req">50 tips shared</span>
+                            </div>
+                            <div class="badge-item featured">
+                                <span class="badge-icon">💡</span>
+                                <span class="badge-name">Wisdom Master</span>
+                                <span class="badge-req">100+ tips</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badge-category">
+                        <h4><span class="cat-icon">🏅</span> SPECIALIZATION</h4>
+                        <div class="badge-list">
+                            <div class="badge-item">
+                                <span class="badge-icon">🏅</span>
+                                <span class="badge-name">KONE Expert</span>
+                                <span class="badge-req">200+ KONE jobs</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-icon">🏅</span>
+                                <span class="badge-name">Otis Expert</span>
+                                <span class="badge-req">200+ Otis jobs</span>
+                            </div>
+                            <div class="badge-item">
+                                <span class="badge-icon">🏅</span>
+                                <span class="badge-name">Schindler Expert</span>
+                                <span class="badge-req">200+ Schindler</span>
+                            </div>
+                            <div class="badge-item featured">
+                                <span class="badge-icon">🏅</span>
+                                <span class="badge-name">Multi-Brand Master</span>
+                                <span class="badge-req">3+ brands</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Flow Section -->
         <section id="flow" class="flow-section">
             <div class="section-container">
                 <div class="section-header">
-                    <h2>03 // YOUR WORKFLOW</h2>
+                    <h2>04 // YOUR WORKFLOW</h2>
                 </div>
                 <div class="flow-timeline">
                     <div class="flow-line"></div>
@@ -238,8 +448,8 @@
                                 </div>
                             </div>
                             <div class="flow-text">
-                                <h3>DIAGNOSE WITH AI</h3>
-                                <p>Point your camera at equipment. Get instant specs, service history, and AI-suggested diagnostics based on symptoms.</p>
+                                <h3>KEYSTONE DIAGNOSTICS</h3>
+                                <p>Point your camera at equipment. Get instant specs, service history, and trusted diagnostics based on 150,000+ verified repairs.</p>
                                 <ul class="flow-benefits">
                                     <li>Visual equipment recognition</li>
                                     <li>Diagnostic suggestions</li>
@@ -276,7 +486,7 @@
         <section class="community-section">
             <div class="section-container">
                 <div class="section-header">
-                    <h2>04 // COMMUNITY WISDOM</h2>
+                    <h2>05 // COMMUNITY WISDOM</h2>
                 </div>
                 <div class="community-content">
                     <div class="community-text">
@@ -308,20 +518,45 @@
                     </div>
                     <div class="community-visual">
                         <div class="feed-preview">
-                            <div class="feed-item">
+                            <div class="feed-item featured-solution">
                                 <div class="feed-avatar">M</div>
                                 <div class="feed-content">
-                                    <span class="feed-author">Marcus W. <span class="verified">✓</span></span>
+                                    <span class="feed-author">Marcus W. <span class="verified">✓</span> <span class="attribution-badge">Full Attribution</span></span>
                                     <p>Found a workaround for the E47 error on Carrier 30XA chillers. Check the low pressure switch first—90% of the time it's a loose connection, not an actual fault.</p>
-                                    <span class="feed-meta">47 confirms • HVAC</span>
+                                    <div class="feed-impact">
+                                        <span class="impact-stat">Used by 847 technicians</span>
+                                        <span class="impact-stat">Saved est. 1,200+ hours</span>
+                                    </div>
+                                    <span class="feed-meta">47 confirms • HVAC • Quick Tip</span>
                                 </div>
                             </div>
                             <div class="feed-item">
                                 <div class="feed-avatar">S</div>
                                 <div class="feed-content">
-                                    <span class="feed-author">Sarah K. <span class="verified">✓</span></span>
+                                    <span class="feed-author">Sarah K. <span class="verified">✓</span> <span class="attribution-badge company">Company</span></span>
                                     <p>Pro tip for Trane Intellipak: the factory default on return air sensor calibration is always off by 2-3°F. Recalibrate after every board replacement.</p>
-                                    <span class="feed-meta">89 confirms • HVAC</span>
+                                    <div class="feed-impact">
+                                        <span class="impact-stat">Used by 234 technicians</span>
+                                    </div>
+                                    <span class="feed-meta">89 confirms • HVAC • Procedure</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contribution-options">
+                            <h4>SHARE YOUR KNOWLEDGE</h4>
+                            <p>Choose how you're credited:</p>
+                            <div class="attribution-choices">
+                                <div class="attr-choice">
+                                    <span class="attr-icon">👤</span>
+                                    <span class="attr-label">Full Name</span>
+                                </div>
+                                <div class="attr-choice">
+                                    <span class="attr-icon">🏢</span>
+                                    <span class="attr-label">Company Only</span>
+                                </div>
+                                <div class="attr-choice">
+                                    <span class="attr-icon">👻</span>
+                                    <span class="attr-label">Anonymous</span>
                                 </div>
                             </div>
                         </div>
@@ -334,7 +569,7 @@
         <section class="features-section">
             <div class="section-container">
                 <div class="section-header">
-                    <h2>05 // YOUR BENEFITS</h2>
+                    <h2>06 // YOUR BENEFITS</h2>
                 </div>
                 <div class="features-grid">
                     <div class="feature-card tech-card">
@@ -349,8 +584,8 @@
                     </div>
                     <div class="feature-card tech-card">
                         <div class="feature-icon">⟁</div>
-                        <h3>AI ASSISTANT</h3>
-                        <p>Point, scan, diagnose. AI-powered suggestions based on symptoms and history.</p>
+                        <h3>KEYSTONE ENGINE</h3>
+                        <p>Point, scan, diagnose. Trusted suggestions based on what's actually worked before.</p>
                     </div>
                     <div class="feature-card tech-card">
                         <div class="feature-icon">⟳</div>
@@ -465,7 +700,7 @@
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <span class="footer-logo">◈ SITESYNC</span>
+                    <span class="footer-logo"><svg class="footer-mark" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="none" stroke="#e65100" stroke-width="1.5"/><rect x="8" y="8" width="8" height="8" rx="0.5" transform="rotate(45 12 12)" fill="#e65100"/></svg> SITESYNC</span>
                     <p class="footer-tagline">The Operating System for Building Services</p>
                 </div>
                 <div class="footer-nav">
@@ -480,14 +715,14 @@
                         <h4>SOLUTIONS</h4>
                         <a href="buildings.html">For Buildings</a>
                         <a href="technicians.html">For Technicians</a>
+                        <a href="companies.html">For Companies</a>
                         <!-- <a href="coming_soon.html">Enterprise</a> -->
-                        <!-- <a href="coming_soon.html">Partners</a> -->
                     </div>
                     <div class="footer-col">
                         <h4>RESOURCES</h4>
                         <!-- <a href="coming_soon.html">Documentation</a> -->
                         <!-- <a href="coming_soon.html">Support</a> -->
-                        <a href="https://status.liftsmith.xyz">Status</a>
+                        <a href="coming_soon.html">Status</a>
                         <!-- <a href="coming_soon.html">Security</a> -->
                     </div>
                 </div>
@@ -524,9 +759,9 @@
             <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
             <span>TECHS</span>
         </a>
-        <a href="platform.html" class="cmd-link">
-            <svg viewBox="0 0 24 24"><path d="M2 12h2v9H2v-9zm3 2h2v7H5v-7zm3 2h2v5H8v-5zm3 2h2v3h-2v-3zm3 2h2v1h-2v-1zM2 3h20v7H2V3zm2 2v3h16V5H4z"/></svg>
-            <span>SYSTEM</span>
+        <a href="demo.html" class="cmd-link">
+            <svg viewBox="0 0 24 24"><path d="M15.5 1h-8A2.5 2.5 0 005 3.5v17A2.5 2.5 0 007.5 23h8a2.5 2.5 0 002.5-2.5v-17A2.5 2.5 0 0015.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/></svg>
+            <span>DEMO</span>
         </a>
     </nav>
 

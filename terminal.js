@@ -52,11 +52,9 @@ class SiteSyncTerminal {
 
     bindEvents() {
         this.overlay.querySelector('.term-close').addEventListener('click', () => this.close());
-        
-        // Close on backdrop click
-        this.overlay.addEventListener('click', (e) => {
-            if (e.target === this.overlay) this.close();
-        });
+
+        // Close on click anywhere
+        this.overlay.addEventListener('click', () => this.close());
     }
 
     open() {
@@ -113,24 +111,6 @@ class SiteSyncTerminal {
                 ]
             },
 
-            {
-                custom: () => {
-                    const container = document.createElement('div');
-                    container.className = 'keycap-container';
-                    
-                    const btn = document.createElement('div');
-                    btn.className = 'keycap-btn';
-                    
-                    const span = document.createElement('span');
-                    span.textContent = 'ESC';
-                    
-                    btn.appendChild(span);
-                    btn.onclick = () => this.close();
-                    
-                    container.appendChild(btn);
-                    this.body.appendChild(container);
-                }
-            }
         ];
 
 

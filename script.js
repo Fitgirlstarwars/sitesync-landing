@@ -565,25 +565,28 @@ const modalData = {
     "health-score": {
         title: "Building Health Score",
         body: `
-            <p>A real-time aggregate metric (0-100) representing the operational status of your building.</p>
+            <p>A real-time aggregate metric (0-100) representing the operational health of your building.</p>
             <ul>
-                <li><strong>Compliance (30%):</strong> Are all inspections up to date?</li>
-                <li><strong>Asset Age (20%):</strong> Lifecycle status of critical equipment.</li>
-                <li><strong>Fix Rate (30%):</strong> Average time to resolve reported faults.</li>
-                <li><strong>User Feedback (20%):</strong> Tenant satisfaction scores.</li>
+                <li><strong>Equipment Age & Condition (25%):</strong> Physical state of assets.</li>
+                <li><strong>Maintenance Compliance (25%):</strong> Are scheduled services being done?</li>
+                <li><strong>Incident Frequency (20%):</strong> How often do problems occur?</li>
+                <li><strong>First-Time Fix Rate (15%):</strong> Are issues resolved efficiently?</li>
+                <li><strong>Predictive Risk (15%):</strong> Pattern-based future risk assessment.</li>
             </ul>
-            <p>Scores above 90 qualify for insurance premium reductions.</p>
+            <p>Scores above 90 qualify for insurance premium reductions and put you in the top 15% of similar buildings.</p>
         `
     },
-    "consensus-engine": {
-        title: "The Consensus Engine",
+    "keystone": {
+        title: "KEYSTONE",
         body: `
-            <p>Our "Triforce" architecture eliminates AI hallucinations by requiring agreement from multiple frontier models.</p>
+            <p>The diagnostic engine trusted by thousands of technicians. Built on 150,000+ verified repairs and decades of field-tested solutions.</p>
             <ul>
-                <li><strong>Step 1:</strong> Gemini 1.5 Pro analyzes the visual fault.</li>
-                <li><strong>Step 2:</strong> Claude 3.5 Sonnet verifies the diagnosis against the manual.</li>
-                <li><strong>Step 3:</strong> GPT-4o acts as the "Judge" to finalize the work order.</li>
+                <li><strong>94% First-Time Fix Rate</strong> — When Keystone identifies the problem, technicians fix it right the first time.</li>
+                <li><strong>Instant Context</strong> — Full equipment history, known quirks, and what's worked before.</li>
+                <li><strong>Parts Confidence</strong> — Order with certainty. No more "let's try this and see."</li>
+                <li><strong>Always Learning</strong> — Every repair across the network makes the next diagnosis faster.</li>
             </ul>
+            <p>When you're standing in front of a fault you've never seen, Keystone has already seen it a thousand times.</p>
         `
     }
 };

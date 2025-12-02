@@ -63,40 +63,35 @@
     <!-- Navigation -->
     <nav class="steel-nav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="brand">
-            <span class="mark" aria-hidden="true">◈</span>
+            <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="none" stroke="#e65100" stroke-width="1.5"/><rect x="8" y="8" width="8" height="8" rx="0.5" transform="rotate(45 12 12)" fill="#e65100"/></svg>
             <span class="text">SITESYNC</span>
         </a>
         <!-- Hamburger removed for Command Bar -->
         <div class="nav-links">
             <a href="buildings.html" class="active">FOR BUILDINGS</a>
             <a href="technicians.html">FOR TECHNICIANS</a>
+            <a href="companies.html">FOR COMPANIES</a>
             <a href="platform.html">THE SYSTEM</a>
         </div>
-        <a href="#claim" class="cta-btn">CLAIM YOUR BUILDING</a>
     </nav>
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="page-hero">
+        <section class="hero-section" aria-labelledby="hero-heading">
             <div class="grid-overlay"></div>
-            <div class="hero-content">
-                <span class="hero-badge">FOR BUILDINGS</span>
-                <h1 class="page-title">
+            <div class="content-wrapper">
+                <h1 id="hero-heading" class="massive-type">
                     YOUR BUILDING'S<br>
                     MEMORY. FOREVER.
                 </h1>
-                <p class="hero-lead">
-                    Contractors come and go. Vendors change. Staff turns over.<br>
-                    <strong>Your building's history shouldn't leave with them.</strong>
-                </p>
-                <div class="hero-actions">
-                    <a href="#claim" class="cta-btn large">GET STARTED FREE</a>
-                    <a href="#flow" class="ghost-btn">SEE HOW IT WORKS</a>
+                <div class="hero-sub">
+                    <p>Contractors come and go. Your building's history stays.</p>
+                    <div class="specs">
+                        <span>FOR BUILDINGS</span>
+                        <span>TOTAL RECALL</span>
+                        <span>ZERO DATA LOSS</span>
+                    </div>
                 </div>
-            </div>
-            <div class="scroll-indicator">
-                <span>SCROLL</span>
-                <div class="scroll-line"></div>
             </div>
         </section>
 
@@ -227,7 +222,7 @@
                                 <h3>ACCUMULATE INTELLIGENCE</h3>
                                 <p>Every repair, every diagnostic, every solution—captured forever. Your building gets smarter with every service call.</p>
                                 <ul class="flow-benefits">
-                                    <li>AI-powered insights</li>
+                                    <li>Predictive insights</li>
                                     <li>Predictive maintenance alerts</li>
                                     <li>Cross-vendor analytics</li>
                                 </ul>
@@ -299,6 +294,94 @@
             </div>
         </section>
 
+        <!-- Dashboard Drill-Down Section -->
+        <section class="dashboard-levels-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>05 // VISIBILITY LEVELS</h2>
+                </div>
+                <div class="levels-intro">
+                    <h3>DRILL DOWN TO DETAILS</h3>
+                    <p>From portfolio overview to individual bolt. Three levels of visibility give you exactly what you need.</p>
+                </div>
+                <div class="dashboard-levels">
+                    <div class="dash-level level-1">
+                        <div class="level-header">
+                            <span class="level-tag">LEVEL 1</span>
+                            <h4>SITE OVERVIEW</h4>
+                        </div>
+                        <div class="level-preview">
+                            <div class="preview-item">
+                                <span class="preview-icon">◈</span>
+                                <div class="preview-content">
+                                    <span class="preview-label">Building Health</span>
+                                    <span class="preview-value">91</span>
+                                </div>
+                            </div>
+                            <div class="preview-item">
+                                <span class="preview-icon">⟳</span>
+                                <div class="preview-content">
+                                    <span class="preview-label">Open Issues</span>
+                                    <span class="preview-value">3</span>
+                                </div>
+                            </div>
+                            <div class="preview-item">
+                                <span class="preview-icon">$</span>
+                                <div class="preview-content">
+                                    <span class="preview-label">YTD Spend</span>
+                                    <span class="preview-value">$47K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level-desc">
+                            <p>Health score, trade summary, compliance status, YTD costs at a glance.</p>
+                        </div>
+                    </div>
+                    <div class="level-connector">
+                        <span>▼</span>
+                    </div>
+                    <div class="dash-level level-2">
+                        <div class="level-header">
+                            <span class="level-tag">LEVEL 2</span>
+                            <h4>TRADE VIEW</h4>
+                        </div>
+                        <div class="level-preview trades">
+                            <div class="trade-tab active">ELEVATORS</div>
+                            <div class="trade-tab">HVAC</div>
+                            <div class="trade-tab">ELECTRICAL</div>
+                            <div class="trade-tab">FIRE</div>
+                        </div>
+                        <div class="level-desc">
+                            <p>Deep dive into specific trades. Equipment list, service history, AI insights.</p>
+                        </div>
+                    </div>
+                    <div class="level-connector">
+                        <span>▼</span>
+                    </div>
+                    <div class="dash-level level-3">
+                        <div class="level-header">
+                            <span class="level-tag">LEVEL 3</span>
+                            <h4>EQUIPMENT DETAIL</h4>
+                        </div>
+                        <div class="level-preview equipment">
+                            <div class="equip-header">
+                                <span class="equip-name">KONE MonoSpace 500</span>
+                                <span class="equip-id">#ELV-001</span>
+                            </div>
+                            <div class="equip-timeline">
+                                <div class="timeline-item">2024-11 • Door alignment adjusted</div>
+                                <div class="timeline-item">2024-09 • Annual inspection passed</div>
+                                <div class="timeline-item">2024-06 • VF drive replaced</div>
+                            </div>
+                        </div>
+                        <div class="level-desc">
+                            <p>Complete 10+ year timeline. Every service call, every technician, every part.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Stats Section -->
         <section class="page-stats-section">
             <div class="section-container">
@@ -360,6 +443,24 @@
                         <li>Setup in under 5 minutes</li>
                         <li>Invite unlimited vendors</li>
                     </ul>
+                    <div class="pricing-tiers">
+                        <h4>SIMPLE PRICING</h4>
+                        <div class="tier-grid">
+                            <div class="tier">
+                                <span class="tier-range">1-10 buildings</span>
+                                <span class="tier-price">$29<small>/mo each</small></span>
+                            </div>
+                            <div class="tier">
+                                <span class="tier-range">11-50 buildings</span>
+                                <span class="tier-price">$24<small>/mo each</small></span>
+                            </div>
+                            <div class="tier">
+                                <span class="tier-range">51+ buildings</span>
+                                <span class="tier-price">$19<small>/mo each</small></span>
+                            </div>
+                        </div>
+                        <p class="tier-note">No per-user fees. No per-equipment fees. No data storage fees.</p>
+                    </div>
                 </div>
                 <form class="lead-form" action="#" method="POST">
                     <div class="form-group">
@@ -383,7 +484,7 @@
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <span class="footer-logo">◈ SITESYNC</span>
+                    <span class="footer-logo"><svg class="footer-mark" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="none" stroke="#e65100" stroke-width="1.5"/><rect x="8" y="8" width="8" height="8" rx="0.5" transform="rotate(45 12 12)" fill="#e65100"/></svg> SITESYNC</span>
                     <p class="footer-tagline">The Operating System for Building Services</p>
                 </div>
                 <div class="footer-nav">
@@ -398,14 +499,14 @@
                         <h4>SOLUTIONS</h4>
                         <a href="buildings.html">For Buildings</a>
                         <a href="technicians.html">For Technicians</a>
+                        <a href="companies.html">For Companies</a>
                         <!-- <a href="coming_soon.html">Enterprise</a> -->
-                        <!-- <a href="coming_soon.html">Partners</a> -->
                     </div>
                     <div class="footer-col">
                         <h4>RESOURCES</h4>
                         <!-- <a href="coming_soon.html">Documentation</a> -->
                         <!-- <a href="coming_soon.html">Support</a> -->
-                        <a href="https://status.liftsmith.xyz">Status</a>
+                        <a href="coming_soon.html">Status</a>
                         <!-- <a href="coming_soon.html">Security</a> -->
                     </div>
                 </div>
@@ -442,9 +543,9 @@
             <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
             <span>TECHS</span>
         </a>
-        <a href="platform.html" class="cmd-link">
-            <svg viewBox="0 0 24 24"><path d="M2 12h2v9H2v-9zm3 2h2v7H5v-7zm3 2h2v5H8v-5zm3 2h2v3h-2v-3zm3 2h2v1h-2v-1zM2 3h20v7H2V3zm2 2v3h16V5H4z"/></svg>
-            <span>SYSTEM</span>
+        <a href="demo.html" class="cmd-link">
+            <svg viewBox="0 0 24 24"><path d="M15.5 1h-8A2.5 2.5 0 005 3.5v17A2.5 2.5 0 007.5 23h8a2.5 2.5 0 002.5-2.5v-17A2.5 2.5 0 0015.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/></svg>
+            <span>DEMO</span>
         </a>
     </nav>
 

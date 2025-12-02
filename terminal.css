@@ -63,6 +63,7 @@
     transform: scale(0.95);
     transition: transform 0.3s ease;
     position: relative;
+    cursor: pointer;
 }
 
 .terminal-overlay.open .terminal-window {
@@ -130,6 +131,7 @@
     flex: 1;
     padding: 30px;
     overflow-y: auto;
+    overflow-x: hidden;
     font-family: var(--term-font);
     font-size: var(--term-font-size);
     line-height: var(--term-line-height);
@@ -137,6 +139,7 @@
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .terminal-line {
@@ -144,6 +147,8 @@
     min-height: 1.6em;
     white-space: pre-wrap;
     word-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 /* Styles */
@@ -252,15 +257,18 @@
     align-items: center;
 }
 
+/* Invisible larger hit area around button */
 .keycap-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 60px;
     height: 50px;
     background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%);
     border-radius: 6px;
-    box-shadow: 
-        0 4px 0 #bbb, 
+    box-shadow:
+        0 4px 0 #bbb,
         0 5px 10px rgba(0,0,0,0.2),
         inset 0 1px 0 rgba(255,255,255,1),
         inset 0 -1px 0 rgba(255,255,255,0.5);
@@ -276,6 +284,17 @@
     transition: all 0.05s ease-out;
     transform-style: preserve-3d;
     border: 1px solid #d4d4d4;
+}
+
+/* Larger invisible clickable area */
+.keycap-btn::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    cursor: pointer;
 }
 
 /* The top face of the key (concave effect) */
@@ -399,16 +418,48 @@
 /* ============================================
    MOBILE STYLES
    ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .terminal-window {
         width: 95%;
-        height: 80vh;
-        max-height: 80vh;
+        height: 85vh;
+        max-height: 85vh;
+    }
+
+    .terminal-body {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .terminal-line {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 600px) {
+    .terminal-window {
+        width: 98%;
+        height: 90vh;
+        max-height: 90vh;
+        border-radius: 8px;
+    }
+
+    .terminal-header {
+        padding: 10px 15px;
+    }
+
+    .terminal-header span {
+        font-size: 11px;
     }
 
     .terminal-body {
         padding: 15px;
         font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .terminal-line {
+        margin-bottom: 8px;
     }
 
     .keycap-container {
