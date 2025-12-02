@@ -59,8 +59,17 @@ class SiteSyncTerminal {
 
     open() {
         if (!this.overlay) this.init();
+        document.getElementById('term-title').textContent = 'SITESYNC_TERMINAL_V4.0';
         this.overlay.classList.add('open');
         this.startCinematic();
+    }
+
+    openSecret() {
+        if (!this.overlay) this.init();
+        document.getElementById('term-title').textContent = 'SITESYNC_TERMINAL';
+        this.body.innerHTML = '';
+        this.overlay.classList.add('open');
+        // Blank terminal - ready for future features
     }
 
     close() {

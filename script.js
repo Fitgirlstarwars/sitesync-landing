@@ -546,16 +546,49 @@ if (hamburger && navLinks) {
 console.log('SiteSync v2.0 loaded | Smooth scroll:', !prefersReducedMotion);
 
 // ============================================
-// 17. TERMINAL TOGGLE
+// 17. TERMINAL TOGGLE (with secret long-press)
 // ============================================
 const terminalBtn = document.querySelector('.cta-btn');
 if (terminalBtn) {
-    terminalBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (window.siteSyncTerminal) {
-            window.siteSyncTerminal.open();
+    let pressTimer = null;
+    let isLongPress = false;
+
+    const startPress = (e) => {
+        isLongPress = false;
+        pressTimer = setTimeout(() => {
+            isLongPress = true;
+            if (window.siteSyncTerminal) {
+                window.siteSyncTerminal.openSecret();
+            }
+        }, 800); // 800ms hold for secret terminal
+    };
+
+    const endPress = (e) => {
+        clearTimeout(pressTimer);
+        if (!isLongPress) {
+            e.preventDefault();
+            if (window.siteSyncTerminal) {
+                window.siteSyncTerminal.open();
+            }
         }
-    });
+    };
+
+    const cancelPress = () => {
+        clearTimeout(pressTimer);
+    };
+
+    // Mouse events
+    terminalBtn.addEventListener('mousedown', startPress);
+    terminalBtn.addEventListener('mouseup', endPress);
+    terminalBtn.addEventListener('mouseleave', cancelPress);
+
+    // Touch events
+    terminalBtn.addEventListener('touchstart', startPress, { passive: true });
+    terminalBtn.addEventListener('touchend', endPress);
+    terminalBtn.addEventListener('touchcancel', cancelPress);
+
+    // Prevent default click
+    terminalBtn.addEventListener('click', (e) => e.preventDefault());
 }
 
 // ============================================
