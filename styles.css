@@ -253,10 +253,13 @@ h1, h2, h3 {
 
 /* Nav button icons - always show icons, hide text */
 .nav-buttons .cta-btn {
-    padding: 0.5rem 0.8rem;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    min-width: 44px;
-    white-space: nowrap;
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 0;
