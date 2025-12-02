@@ -236,14 +236,19 @@ h1, h2, h3 {
 /* Nav Buttons Container */
 .nav-buttons {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
     align-items: center;
     flex-shrink: 0;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Nav button icons - always show icons, hide text */
 .nav-buttons .cta-btn {
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 0.8rem;
+    flex-shrink: 0;
 }
 
 .nav-buttons .cta-btn .desktop-text {
@@ -254,7 +259,7 @@ h1, h2, h3 {
     display: inline;
     font-family: var(--font-mono);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 /* Video Modal */
