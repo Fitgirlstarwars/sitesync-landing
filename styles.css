@@ -233,20 +233,28 @@ h1, h2, h3 {
     animation: none;
 }
 
-/* Video Trigger Button */
-.video-trigger {
-    margin-right: 0.5rem;
+/* Nav Buttons Container */
+.nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 /* Nav button icons - always show icons, hide text */
-.cta-btn .desktop-text {
+.nav-buttons .cta-btn {
+    padding: 0.6rem 1rem;
+}
+
+.nav-buttons .cta-btn .desktop-text {
     display: none;
 }
 
-.cta-btn .mobile-text {
+.nav-buttons .cta-btn .mobile-text {
     display: inline;
     font-family: var(--font-mono);
     font-weight: 700;
+    font-size: 1rem;
 }
 
 /* Video Modal */
