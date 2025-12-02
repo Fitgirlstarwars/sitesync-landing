@@ -119,13 +119,15 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem 0 0.5rem;
+    padding: 0 1rem 0 0.5rem;
     z-index: 100;
     border-bottom: 2px solid #000;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
+    overflow: hidden;
+    gap: 1rem;
 }
 
 .brand {
@@ -236,19 +238,19 @@ h1, h2, h3 {
 /* Nav Buttons Container */
 .nav-buttons {
     display: flex;
+    flex-wrap: nowrap;
     gap: 0.5rem;
     align-items: center;
     flex-shrink: 0;
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: auto;
 }
 
 /* Nav button icons - always show icons, hide text */
 .nav-buttons .cta-btn {
     padding: 0.5rem 0.8rem;
     flex-shrink: 0;
+    min-width: 44px;
+    white-space: nowrap;
 }
 
 .nav-buttons .cta-btn .desktop-text {
