@@ -55,12 +55,21 @@ class SiteSyncTerminal {
 
         // Close on click anywhere
         this.overlay.addEventListener('click', () => this.close());
+
+        // Prevent touch scrolling on overlay
+        this.overlay.addEventListener('touchmove', (e) => {
+            // Allow scrolling inside terminal body only
+            if (!e.target.closest('.terminal-body')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
     }
 
     open() {
         if (!this.overlay) this.init();
         document.getElementById('term-title').textContent = 'SITESYNC_TERMINAL';
         this.overlay.classList.add('open');
+        this.lockScroll();
         this.startCinematic();
     }
 
@@ -69,12 +78,32 @@ class SiteSyncTerminal {
         document.getElementById('term-title').textContent = 'SITESYNC_TERMINAL';
         this.body.innerHTML = '';
         this.overlay.classList.add('open');
+        this.lockScroll();
         // Blank terminal - ready for future features
     }
 
     close() {
         this.overlay.classList.remove('open');
+        this.unlockScroll();
         this.stopCinematic(); // Stop any running demo
+    }
+
+    lockScroll() {
+        // Store current scroll position and lock body
+        this.scrollPosition = window.pageYOffset;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+    }
+
+    unlockScroll() {
+        // Restore body scroll
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, this.scrollPosition);
     }
 
     // ─────────────────────────────────────────────────────────────
