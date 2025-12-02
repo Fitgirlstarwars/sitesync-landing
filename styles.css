@@ -191,6 +191,10 @@ h1, h2, h3 {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     position: relative;
     overflow: hidden;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .cta-btn::after {
@@ -251,6 +255,9 @@ h1, h2, h3 {
     flex-shrink: 0;
     min-width: 44px;
     white-space: nowrap;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
 }
 
 .nav-buttons .cta-btn .desktop-text {
