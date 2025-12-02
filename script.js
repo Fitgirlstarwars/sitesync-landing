@@ -548,7 +548,7 @@ console.log('SiteSync v2.0 loaded | Smooth scroll:', !prefersReducedMotion);
 // ============================================
 // 17. TERMINAL TOGGLE (with secret long-press)
 // ============================================
-const terminalBtn = document.querySelector('.cta-btn');
+const terminalBtn = document.querySelector('.cta-btn.terminal-trigger');
 if (terminalBtn) {
     let pressTimer = null;
     let isLongPress = false;
@@ -713,15 +713,24 @@ function closeVideoModal() {
 }
 
 if (videoTrigger) {
-    videoTrigger.addEventListener('click', openVideoModal);
+    videoTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openVideoModal();
+    });
 }
 
 if (videoModalClose) {
-    videoModalClose.addEventListener('click', closeVideoModal);
+    videoModalClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeVideoModal();
+    });
 }
 
 if (videoModalBackdrop) {
-    videoModalBackdrop.addEventListener('click', closeVideoModal);
+    videoModalBackdrop.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeVideoModal();
+    });
 }
 
 // Close video modal on ESC
