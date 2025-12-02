@@ -1078,6 +1078,66 @@ h1, h2, h3 {
     transform: translateY(-10.5px) rotate(-45deg);
 }
 
+/* Command Bar - Always visible (except demo page which doesn't include it) */
+.command-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    height: 60px;
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cmd-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #888;
+    font-size: 10px;
+    font-family: var(--font-display);
+    gap: 4px;
+    width: 50px;
+    transition: all 0.3s ease;
+}
+
+.cmd-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: all 0.3s ease;
+}
+
+.cmd-link.active {
+    color: var(--accent-orange);
+}
+
+.cmd-link.active svg {
+    filter: drop-shadow(0 0 5px rgba(230, 81, 0, 0.5));
+}
+
+.cmd-link:hover {
+    color: var(--accent-orange);
+}
+
+/* Add padding to body so content isn't covered by command bar */
+body {
+    padding-bottom: 100px;
+}
+
 @media (max-width: 1150px) {
     .massive-type { font-size: 3rem; }
     .split-container { flex-direction: column; }
@@ -1092,60 +1152,9 @@ h1, h2, h3 {
         display: none !important; /* Kill the old mobile menu */
     }
 
-    /* Command Bar (Mobile Bottom Nav) */
+    /* Command bar max-width adjustment for mobile */
     .command-bar {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
         max-width: 400px;
-        height: 60px;
-        background: rgba(15, 15, 15, 0.85);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 30px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0 10px;
-        z-index: 1000;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .cmd-link {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: #888;
-        font-size: 10px;
-        font-family: var(--font-display);
-        gap: 4px;
-        width: 50px;
-        transition: all 0.3s ease;
-    }
-
-    .cmd-link svg {
-        width: 20px;
-        height: 20px;
-        fill: currentColor;
-        transition: all 0.3s ease;
-    }
-
-    .cmd-link.active {
-        color: var(--accent-orange);
-    }
-
-    .cmd-link.active svg {
-        filter: drop-shadow(0 0 5px rgba(230, 81, 0, 0.5));
-    }
-
-    /* Add padding to body so content isn't covered */
-    body {
-        padding-bottom: 100px;
     }
 
     .nav-links a {

@@ -366,6 +366,168 @@ const PIXEL_SPRITES = {
             ['success','success','success','success','success','success','success','success'],
             ['success','success','success','success','success','success','success','success']
         ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════
+    // NEW ASSETS: ELEVATOR STORY
+    // ═══════════════════════════════════════════════════════════════
+
+    elevator: {
+        width: 14,
+        height: 20,
+        scale: 3,
+        frames: [
+            // Frame 0: Closed
+            [
+                ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark'],
+                ['wallDark','t','t','t','t','t','t','t','t','t','t','t','t','wallDark'],
+                ['wallDark','t','accent','accent','t','t','wallDark','wallDark','t','t','t','t','t','wallDark'], // Floor indicator
+                ['wallDark','t','t','t','t','t','t','t','t','t','t','t','t','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wall','wallDark','wallDark','wall','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark']
+            ],
+            // Frame 1: Open (Dark inside)
+            [
+                ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark'],
+                ['wallDark','t','t','t','t','t','t','t','t','t','t','t','t','wallDark'],
+                ['wallDark','t','success','success','t','t','wallDark','wallDark','t','t','t','t','t','wallDark'], // Green light
+                ['wallDark','t','t','t','t','t','t','t','t','t','t','t','t','wallDark'],
+                ['wallDark','wall','t','t','t','t','t','t','t','t','t','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wall','t','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','gbDarkest','t','wall','wallDark'],
+                ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark']
+            ]
+        ]
+    },
+
+    phone: {
+        width: 8,
+        height: 10,
+        scale: 2,
+        pixels: [
+            ['t','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','t'],
+            ['wallDark','info','info','info','info','info','info','wallDark'],
+            ['wallDark','info','info','info','info','info','info','wallDark'],
+            ['wallDark','info','info','info','info','info','info','wallDark'],
+            ['wallDark','info','info','info','info','info','info','wallDark'],
+            ['wallDark','info','info','info','info','info','info','wallDark'],
+            ['wallDark','info','info','info','info','info','info','wallDark'],
+            ['wallDark','info','info','info','info','info','info','wallDark'],
+            ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark'],
+            ['t','t','t','t','t','t','t','t']
+        ]
+    },
+
+    accessPanel: {
+        width: 6,
+        height: 8,
+        scale: 2,
+        frames: [
+            // Red (Locked)
+            [
+                ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark'],
+                ['wallDark','error','error','error','error','wallDark'],
+                ['wallDark','error','error','error','error','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark']
+            ],
+            // Green (Unlocked)
+            [
+                ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark'],
+                ['wallDark','success','success','success','success','wallDark'],
+                ['wallDark','success','success','success','success','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wall','wall','wall','wall','wallDark'],
+                ['wallDark','wallDark','wallDark','wallDark','wallDark','wallDark']
+            ]
+        ]
+    },
+
+    battery: {
+        width: 8,
+        height: 12,
+        scale: 3,
+        frames: [
+            // Low
+            [
+                ['t','t','wallDark','wallDark','wallDark','wallDark','t','t'],
+                ['t','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','t'],
+                ['t','wallDark','t','t','t','t','wallDark','t'],
+                ['t','wallDark','t','t','t','t','wallDark','t'],
+                ['t','wallDark','t','t','t','t','wallDark','t'],
+                ['t','wallDark','t','t','t','t','wallDark','t'],
+                ['t','wallDark','t','t','t','t','wallDark','t'],
+                ['t','wallDark','t','t','t','t','wallDark','t'],
+                ['t','wallDark','error','error','error','error','wallDark','t'],
+                ['t','wallDark','error','error','error','error','wallDark','t'],
+                ['t','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','t'],
+                ['t','t','t','t','t','t','t','t']
+            ],
+            // Full
+            [
+                ['t','t','wallDark','wallDark','wallDark','wallDark','t','t'],
+                ['t','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','t'],
+                ['t','wallDark','success','success','success','success','wallDark','t'],
+                ['t','wallDark','success','success','success','success','wallDark','t'],
+                ['t','wallDark','success','success','success','success','wallDark','t'],
+                ['t','wallDark','success','success','success','success','wallDark','t'],
+                ['t','wallDark','success','success','success','success','wallDark','t'],
+                ['t','wallDark','success','success','success','success','wallDark','t'],
+                ['t','wallDark','success','success','success','success','wallDark','t'],
+                ['t','wallDark','success','success','success','success','wallDark','t'],
+                ['t','wallDark','wallDark','wallDark','wallDark','wallDark','wallDark','t'],
+                ['t','t','t','t','t','t','t','t']
+            ]
+        ]
+    },
+
+    trophy: {
+        width: 10,
+        height: 10,
+        scale: 2,
+        pixels: [
+            ['door','door','door','door','door','door','door','door','door','door'],
+            ['t','door','door','door','door','door','door','door','door','t'],
+            ['t','door','door','door','door','door','door','door','door','t'],
+            ['t','t','door','door','door','door','door','door','t','t'],
+            ['t','t','t','door','door','door','door','t','t','t'],
+            ['t','t','t','door','door','door','door','t','t','t'],
+            ['t','t','t','t','door','door','t','t','t','t'],
+            ['t','t','t','t','door','door','t','t','t','t'],
+            ['t','t','door','door','door','door','door','door','t','t'],
+            ['t','t','door','door','door','door','door','door','t','t']
+        ]
     }
 };
 
