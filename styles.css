@@ -238,6 +238,17 @@ h1, h2, h3 {
     margin-right: 0.5rem;
 }
 
+/* Nav button icons - always show icons, hide text */
+.cta-btn .desktop-text {
+    display: none;
+}
+
+.cta-btn .mobile-text {
+    display: inline;
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
 /* Video Modal */
 .video-modal {
     display: none;
