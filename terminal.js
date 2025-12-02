@@ -97,11 +97,11 @@ class SiteSyncTerminal {
                     { text: "THE SOLUTION:", style: "success" },
                     { text: "One platform connecting Buildings, Trades, and AI.", pause: 1000 },
                     { text: "1. PERMANENT MEMORY", style: "info" },
-                    { text: "   Data stays with the building, forever." },
+                    { text: "Data stays with the building, forever." },
                     { text: "2. SHARED INTELLIGENCE", style: "info" },
-                    { text: "   When one technician solves a problem, the entire network learns." },
+                    { text: "When one technician solves a problem, the entire network learns." },
                     { text: "3. TOTAL OVERSIGHT", style: "info" },
-                    { text: "   Command the pulse of your building. Every trade, every asset, every moment.", pause: 2000 }
+                    { text: "Command the pulse of your building. Every trade, every asset, every moment.", pause: 2000 }
                 ]
             },
             {

@@ -421,8 +421,9 @@
 @media (max-width: 900px) {
     .terminal-window {
         width: 95%;
-        height: 85vh;
+        height: auto;
         max-height: 85vh;
+        min-height: 400px;
     }
 
     .terminal-body {
@@ -431,17 +432,26 @@
     }
 
     .terminal-line {
+        white-space: normal;
         word-break: break-word;
         overflow-wrap: break-word;
     }
 }
 
 @media (max-width: 600px) {
+    .terminal-overlay {
+        padding: 10px;
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
     .terminal-window {
-        width: 98%;
-        height: 90vh;
-        max-height: 90vh;
-        border-radius: 8px;
+        width: 100%;
+        height: auto;
+        max-height: calc(100vh - 80px);
+        min-height: 300px;
+        border-radius: 12px;
+        margin: 0;
     }
 
     .terminal-header {
@@ -449,17 +459,35 @@
     }
 
     .terminal-header span {
-        font-size: 11px;
+        font-size: 10px;
+        letter-spacing: 0.02em;
     }
 
     .terminal-body {
-        padding: 15px;
-        font-size: 13px;
-        line-height: 1.7;
+        padding: 16px;
+        font-size: 12px;
+        line-height: 1.8;
     }
 
     .terminal-line {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        white-space: normal;
+        word-break: break-word;
+        text-indent: 0;
+    }
+
+    /* Fix highlight on mobile */
+    .highlight {
+        display: inline;
+        padding: 2px 6px;
+        font-size: 11px;
+    }
+
+    /* Fix info/success/accent labels */
+    .info, .success, .accent {
+        display: block;
+        margin-top: 12px;
+        font-size: 11px;
     }
 
     .keycap-container {
@@ -478,5 +506,21 @@
         gap: 15px;
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+    .terminal-body {
+        padding: 12px;
+        font-size: 11px;
+    }
+
+    .terminal-header span {
+        font-size: 9px;
+    }
+
+    .highlight, .info, .success, .accent {
+        font-size: 10px;
     }
 }
