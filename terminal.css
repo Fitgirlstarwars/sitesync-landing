@@ -49,8 +49,9 @@
    TERMINAL WINDOW
    ============================================ */
 .terminal-window {
-    width: 920px;
-    height: 650px;
+    width: 700px;
+    height: auto;
+    min-height: 450px;
     max-width: 95vw;
     max-height: 90vh;
     background: var(--term-bg);
@@ -418,12 +419,10 @@
 /* ============================================
    MOBILE STYLES
    ============================================ */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .terminal-window {
         width: 95%;
-        height: auto;
-        max-height: 85vh;
-        min-height: 400px;
+        min-height: 350px;
     }
 
     .terminal-body {
