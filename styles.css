@@ -1234,7 +1234,7 @@ body {
     .massive-type { font-size: 3rem; }
     .split-container { flex-direction: column; }
     .users-section { height: auto; }
-    .steel-nav { padding: 0 1rem 0 0.5rem; }
+    .steel-nav { padding: 0 1rem 0 1.5rem; }
 
     .hamburger {
         display: none !important; /* Kill the hamburger */
