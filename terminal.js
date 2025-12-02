@@ -59,7 +59,7 @@ class SiteSyncTerminal {
 
     open() {
         if (!this.overlay) this.init();
-        document.getElementById('term-title').textContent = 'SITESYNC_TERMINAL_V4.0';
+        document.getElementById('term-title').textContent = 'SITESYNC_TERMINAL';
         this.overlay.classList.add('open');
         this.startCinematic();
     }

@@ -553,7 +553,12 @@ if (terminalBtn) {
     let pressTimer = null;
     let isLongPress = false;
 
+    // Prevent text selection on hold
+    terminalBtn.style.userSelect = 'none';
+    terminalBtn.style.webkitUserSelect = 'none';
+
     const startPress = (e) => {
+        e.preventDefault();
         isLongPress = false;
         pressTimer = setTimeout(() => {
             isLongPress = true;
@@ -564,9 +569,9 @@ if (terminalBtn) {
     };
 
     const endPress = (e) => {
+        e.preventDefault();
         clearTimeout(pressTimer);
         if (!isLongPress) {
-            e.preventDefault();
             if (window.siteSyncTerminal) {
                 window.siteSyncTerminal.open();
             }
@@ -582,13 +587,19 @@ if (terminalBtn) {
     terminalBtn.addEventListener('mouseup', endPress);
     terminalBtn.addEventListener('mouseleave', cancelPress);
 
-    // Touch events
-    terminalBtn.addEventListener('touchstart', startPress, { passive: true });
+    // Touch events - prevent default to stop selection
+    terminalBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        startPress(e);
+    });
     terminalBtn.addEventListener('touchend', endPress);
     terminalBtn.addEventListener('touchcancel', cancelPress);
 
     // Prevent default click
     terminalBtn.addEventListener('click', (e) => e.preventDefault());
+
+    // Prevent context menu on long press
+    terminalBtn.addEventListener('contextmenu', (e) => e.preventDefault());
 }
 
 // ============================================
