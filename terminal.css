@@ -50,8 +50,7 @@
    ============================================ */
 .terminal-window {
     width: 700px;
-    height: auto;
-    min-height: 450px;
+    height: 520px;
     max-width: 95vw;
     max-height: 90vh;
     background: var(--term-bg);
@@ -422,7 +421,7 @@
 @media (max-width: 768px) {
     .terminal-window {
         width: 95%;
-        min-height: 350px;
+        height: 480px;
     }
 
     .terminal-body {
@@ -440,15 +439,13 @@
 @media (max-width: 600px) {
     .terminal-overlay {
         padding: 10px;
-        align-items: flex-start;
-        padding-top: 40px;
+        align-items: center;
     }
 
     .terminal-window {
         width: 100%;
-        height: auto;
-        max-height: calc(100vh - 80px);
-        min-height: 300px;
+        height: 85vh;
+        max-height: 600px;
         border-radius: 12px;
         margin: 0;
     }
