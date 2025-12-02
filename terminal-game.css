@@ -1,0 +1,585 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   SITESYNC TERMINAL GAME - CSS
+   Mario/Game Boy style pixel art experience
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   GAME BOY PALETTE & CSS VARIABLES
+   ───────────────────────────────────────────────────────────── */
+
+.terminal-game {
+    /* Game Boy greenscale (classic) */
+    --gb-lightest: #9bbc0f;
+    --gb-light: #8bac0f;
+    --gb-dark: #306230;
+    --gb-darkest: #0f380f;
+
+    /* SiteSync brand colors */
+    --game-bg: #0a0c10;
+    --game-dark: #161b22;
+    --game-accent: #f0883e;
+    --game-text: #e6edf3;
+    --game-success: #3fb950;
+    --game-error: #f85149;
+    --game-info: #58a6ff;
+
+    /* Typography */
+    --game-font: 'Press Start 2P', 'JetBrains Mono', monospace;
+    --game-font-size: 10px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   GAME CONTAINER
+   ───────────────────────────────────────────────────────────── */
+
+.terminal-game {
+    width: 100%;
+    height: 100%;
+    background: var(--game-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--game-font);
+    font-size: var(--game-font-size);
+    color: var(--game-text);
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Scanline overlay */
+.terminal-game::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* CRT glow effect */
+.terminal-game::after {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(240, 136, 62, 0.03) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 99;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SCENE CONTAINER
+   ───────────────────────────────────────────────────────────── */
+
+.game-scene {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.game-scene.fade-out {
+    opacity: 0;
+}
+
+.game-scene.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   PIXEL SPRITE BASE STYLES
+   ───────────────────────────────────────────────────────────── */
+
+.pixel-sprite {
+    position: absolute;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    pointer-events: none;
+}
+
+/* Sprite container for positioning */
+.sprite-container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   STAGE / GROUND
+   ───────────────────────────────────────────────────────────── */
+
+.game-stage {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.game-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--game-dark) 0px,
+        var(--game-dark) 8px,
+        #1f2937 8px,
+        #1f2937 16px
+    );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   TEXT & DIALOGUE
+   ───────────────────────────────────────────────────────────── */
+
+.game-text-container {
+    width: 100%;
+    max-width: 500px;
+    min-height: 80px;
+    padding: 15px 20px;
+    background: var(--game-dark);
+    border: 3px solid var(--game-accent);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Dialogue box corners (pixel style) */
+.game-text-container::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: 6px;
+    height: 6px;
+    background: var(--game-accent);
+}
+
+.game-text-container::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 6px;
+    height: 6px;
+    background: var(--game-accent);
+}
+
+.game-text {
+    font-family: var(--game-font);
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--game-text);
+    min-height: 1.8em;
+}
+
+.game-text.error {
+    color: var(--game-error);
+}
+
+.game-text.success {
+    color: var(--game-success);
+}
+
+.game-text.info {
+    color: var(--game-info);
+}
+
+.game-text.accent {
+    color: var(--game-accent);
+}
+
+/* Blinking cursor */
+.game-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    background: var(--game-text);
+    margin-left: 2px;
+    animation: blink 0.6s step-end infinite;
+    vertical-align: middle;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   PROGRESS INDICATOR
+   ───────────────────────────────────────────────────────────── */
+
+.game-progress {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--game-dark);
+    border: 2px solid var(--game-accent);
+}
+
+.progress-dot.active {
+    background: var(--game-accent);
+}
+
+.progress-dot.complete {
+    background: var(--game-success);
+    border-color: var(--game-success);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CTA BUTTON
+   ───────────────────────────────────────────────────────────── */
+
+.game-cta {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--game-accent);
+    color: var(--game-bg);
+    font-family: var(--game-font);
+    font-size: 10px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    transition: transform 0.1s;
+}
+
+.game-cta::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 4px;
+    right: -4px;
+    height: 4px;
+    background: rgba(240, 136, 62, 0.5);
+}
+
+.game-cta:hover {
+    transform: translateY(-2px);
+}
+
+.game-cta:active {
+    transform: translateY(2px);
+}
+
+.game-cta:active::before {
+    display: none;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CLICK TO CONTINUE
+   ───────────────────────────────────────────────────────────── */
+
+.click-continue {
+    font-family: var(--game-font);
+    font-size: 8px;
+    color: var(--game-accent);
+    text-transform: uppercase;
+    margin-top: 20px;
+    animation: pulse 1.5s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.click-continue::before {
+    content: '[ ';
+}
+
+.click-continue::after {
+    content: ' ]';
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ANIMATIONS
+   ───────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes walk {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100px); opacity: 0; }
+}
+
+@keyframes dropIn {
+    0% { transform: translateY(-200px) rotate(-10deg); opacity: 0; }
+    60% { transform: translateY(10px) rotate(5deg); opacity: 1; }
+    80% { transform: translateY(-5px) rotate(-2deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+@keyframes growIn {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes dataFlow {
+    0% { transform: translateX(0); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(var(--flow-distance, 100px)); opacity: 0; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SPRITE ANIMATIONS
+   ───────────────────────────────────────────────────────────── */
+
+.sprite-walking {
+    animation: walk 0.3s steps(1) infinite;
+}
+
+.sprite-floating {
+    animation: float 2s ease-in-out infinite;
+}
+
+.sprite-bounce {
+    animation: bounce 0.5s ease-out;
+}
+
+.sprite-drop-in {
+    animation: dropIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.sprite-grow-in {
+    animation: growIn 0.5s ease-out forwards;
+}
+
+.sprite-slide-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.sprite-slide-right {
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+.sprite-slide-out-right {
+    animation: slideOutRight 0.5s ease-out forwards;
+}
+
+.sprite-shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SCENE-SPECIFIC STYLES
+   ───────────────────────────────────────────────────────────── */
+
+/* Scene 1: Problem */
+.scene-problem .sprite-container {
+    gap: 30px;
+}
+
+/* Scene 2: Chaos */
+.scene-chaos .buildings-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-end;
+}
+
+.scene-chaos .broken-connection {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--game-error) 0px,
+        var(--game-error) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+    opacity: 0.5;
+}
+
+/* Scene 3: SiteSync Arrives */
+.scene-logo .logo-container {
+    position: relative;
+}
+
+.scene-logo .sparkle-particle {
+    position: absolute;
+    animation: sparkle 1s ease-in-out infinite;
+}
+
+/* Scene 4: Network */
+.scene-network .network-container {
+    position: relative;
+}
+
+.scene-network .connection-line {
+    position: absolute;
+    height: 4px;
+    background: var(--game-success);
+    transform-origin: left center;
+    opacity: 0.8;
+}
+
+.scene-network .data-packet {
+    position: absolute;
+    animation: dataFlow 2s linear infinite;
+}
+
+/* Scene 5: Victory */
+.scene-victory .confetti-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    animation: confetti 2s ease-out forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HEALTH BAR
+   ───────────────────────────────────────────────────────────── */
+
+.health-bar {
+    width: 100px;
+    height: 12px;
+    background: var(--game-dark);
+    border: 2px solid var(--game-text);
+    position: relative;
+    margin-top: 10px;
+}
+
+.health-bar-fill {
+    height: 100%;
+    background: var(--game-success);
+    width: 0%;
+    transition: width 1s ease-out;
+}
+
+.health-bar-label {
+    position: absolute;
+    top: -18px;
+    left: 0;
+    font-size: 8px;
+    color: var(--game-text);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MOBILE RESPONSIVE
+   ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+    .terminal-game {
+        --game-font-size: 8px;
+    }
+
+    .game-stage {
+        height: 150px;
+        max-width: 300px;
+    }
+
+    .game-text-container {
+        padding: 12px 15px;
+        max-width: 300px;
+    }
+
+    .game-text {
+        font-size: 9px;
+    }
+
+    .click-continue {
+        font-size: 7px;
+    }
+
+    .game-cta {
+        font-size: 8px;
+        padding: 10px 18px;
+    }
+
+    /* Scale down sprites on mobile */
+    .pixel-sprite {
+        transform: scale(0.7);
+        transform-origin: bottom center;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   GOOGLE FONT IMPORT (Press Start 2P)
+   ───────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');

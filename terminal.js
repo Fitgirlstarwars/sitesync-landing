@@ -8,9 +8,10 @@ class SiteSyncTerminal {
         this.overlay = null;
         this.window = null;
         this.body = null;
-        
+
         this.isPaused = false;
         this.abortController = null;
+        this.game = null; // Terminal game instance
     }
 
     // ─────────────────────────────────────────────────────────────
@@ -51,10 +52,26 @@ class SiteSyncTerminal {
     }
 
     bindEvents() {
-        this.overlay.querySelector('.term-close').addEventListener('click', () => this.close());
+        this.overlay.querySelector('.term-close').addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.close();
+        });
 
-        // Close on click anywhere
-        this.overlay.addEventListener('click', () => this.close());
+        // Close on click outside terminal window (on overlay background)
+        this.overlay.addEventListener('click', (e) => {
+            // Only close if clicking the overlay itself, not its children
+            if (e.target === this.overlay) {
+                this.close();
+            }
+        });
+
+        // Prevent closing when clicking inside terminal window
+        this.window.addEventListener('click', (e) => {
+            // Don't close unless it's the close button
+            if (!e.target.closest('.term-close')) {
+                e.stopPropagation();
+            }
+        });
 
         // Prevent touch scrolling on overlay
         this.overlay.addEventListener('touchmove', (e) => {
@@ -75,17 +92,31 @@ class SiteSyncTerminal {
 
     openSecret() {
         if (!this.overlay) this.init();
-        document.getElementById('term-title').textContent = 'SITESYNC_TERMINAL';
+        document.getElementById('term-title').textContent = 'SITESYNC_GAME';
         this.body.innerHTML = '';
         this.overlay.classList.add('open');
         this.lockScroll();
-        // Blank terminal - ready for future features
+
+        // Start the pixel art game experience
+        if (window.TerminalGame) {
+            this.game = new window.TerminalGame(this.body);
+            this.game.start();
+        } else {
+            // Fallback if game not loaded
+            this.body.innerHTML = '<div style="padding: 20px; color: #f0883e;">Game loading...</div>';
+        }
     }
 
     close() {
         this.overlay.classList.remove('open');
         this.unlockScroll();
         this.stopCinematic(); // Stop any running demo
+
+        // Stop game if running
+        if (this.game) {
+            this.game.stop();
+            this.game = null;
+        }
     }
 
     lockScroll() {
