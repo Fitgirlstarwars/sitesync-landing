@@ -59,6 +59,13 @@
     </script>
 </head>
 <body class="page-buildings">
+    <!-- Auth Check -->
+    <script>
+        if (sessionStorage.getItem('sitesync_auth') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -531,8 +538,8 @@
         </div>
     </footer>
 
-    <!-- Command Bar (Mobile Only) -->
-    <nav class="command-bar" style="display: none;"> <!-- Hidden by default, shown via media query -->
+    <!-- Command Bar -->
+    <nav class="command-bar">
         <a href="index.html" class="cmd-link">
             <svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h5v-7h6v7h5V9z"/></svg>
             <span>HOME</span>
@@ -555,14 +562,5 @@
     <script src="pixel-sprites.js"></script>
     <script src="terminal-game.js"></script>
     <script src="terminal.js"></script>
-    <script>
-        // Simple script to show command bar only on mobile
-        if (window.innerWidth <= 1024) {
-            document.querySelector('.command-bar').style.display = 'flex';
-        }
-        window.addEventListener('resize', () => {
-            document.querySelector('.command-bar').style.display = window.innerWidth <= 1024 ? 'flex' : 'none';
-        });
-    </script>
 </body>
 </html>

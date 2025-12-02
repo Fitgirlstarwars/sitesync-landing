@@ -59,6 +59,13 @@
     </script>
 </head>
 <body class="page-companies">
+    <!-- Auth Check -->
+    <script>
+        if (sessionStorage.getItem('sitesync_auth') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 

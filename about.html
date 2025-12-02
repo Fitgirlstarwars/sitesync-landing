@@ -81,6 +81,13 @@
     </style>
 </head>
 <body class="page-about">
+    <!-- Auth Check -->
+    <script>
+        if (sessionStorage.getItem('sitesync_auth') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+
     <!-- Navigation -->
     <nav class="steel-nav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="brand">

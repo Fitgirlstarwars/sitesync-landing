@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SiteSync</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #1a1a1a;
+            --surface-2: #2a2a2a;
+            --text: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.6);
+            --accent: #e65100;
+            --accent-glow: rgba(230, 81, 0, 0.3);
+            --error: #ff453a;
+        }
+
+        html, body {
+            height: 100%;
+            background: var(--bg);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+        }
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ambient glow */
+        .login-page::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.4;
+            pointer-events: none;
+            animation: breathe 6s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--text);
+        }
+
+        .login-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .login-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--surface-2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            color: var(--text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: inherit;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .login-btn:hover {
+            background: #ff6d00;
+        }
+
+        .login-btn:active {
+            transform: scale(0.98);
+        }
+
+        .error-message {
+            background: rgba(255, 69, 58, 0.1);
+            border: 1px solid rgba(255, 69, 58, 0.3);
+            color: var(--error);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: none;
+            text-align: center;
+        }
+
+        .error-message.visible {
+            display: block;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="logo">
+                    <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="none" stroke="#e65100" stroke-width="1.5"/>
+                        <rect x="8" y="8" width="8" height="8" rx="0.5" transform="rotate(45 12 12)" fill="#e65100"/>
+                    </svg>
+                    <span class="logo-text">SITESYNC</span>
+                </div>
+                <p class="login-subtitle">Enter credentials to continue</p>
+            </div>
+
+            <div class="login-card">
+                <div class="error-message" id="errorMessage">
+                    Invalid username or password
+                </div>
+
+                <form id="loginForm" onsubmit="return handleLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="username">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            class="form-input"
+                            placeholder="Enter username"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            class="form-input"
+                            placeholder="Enter password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="login-btn">Sign In</button>
+                </form>
+            </div>
+
+            <p class="login-footer">SiteSync Demo Access</p>
+        </div>
+    </div>
+
+    <script>
+        // Check if already logged in
+        if (sessionStorage.getItem('sitesync_auth') === 'true') {
+            window.location.href = 'index.html';
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.toLowerCase().trim();
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Simple auth check
+            if (username === 'rob' && password === 'wes') {
+                sessionStorage.setItem('sitesync_auth', 'true');
+                window.location.href = 'index.html';
+            } else {
+                errorMessage.classList.add('visible');
+                document.getElementById('password').value = '';
+
+                // Remove error after 3 seconds
+                setTimeout(() => {
+                    errorMessage.classList.remove('visible');
+                }, 3000);
+            }
+
+            return false;
+        }
+
+        // Focus username on load
+        document.getElementById('username').focus();
+    </script>
+</body>
+</html>

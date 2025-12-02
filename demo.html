@@ -2326,6 +2326,13 @@
     </style>
 </head>
 <body>
+    <!-- Auth Check -->
+    <script>
+        if (sessionStorage.getItem('sitesync_auth') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+
     <div class="demo-page">
         <div class="ambient-glow"></div>
 
