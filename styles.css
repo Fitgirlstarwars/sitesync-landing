@@ -145,14 +145,22 @@ h1, h2, h3 {
     flex-shrink: 0;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-light);
     font-weight: 600;
-    margin: 0 1.5rem;
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
+    margin: 0 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
     position: relative;
+    flex-shrink: 0;
 }
 
 .nav-links a::after {
@@ -1070,7 +1078,7 @@ h1, h2, h3 {
     transform: translateY(-10.5px) rotate(-45deg);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
     .massive-type { font-size: 3rem; }
     .split-container { flex-direction: column; }
     .users-section { height: auto; }
@@ -1158,11 +1166,11 @@ h1, h2, h3 {
     }
 
     /* Mobile Overrides */
-    @media (max-width: 1024px) {
+    @media (max-width: 1150px) {
         .cta-btn.terminal-trigger {
             display: flex; /* Ensure visible */
         }
-        
+
         .desktop-text {
             display: none;
         }
@@ -1548,7 +1556,7 @@ button:focus-visible {
     }
 }
 /* Mobile Terminal Trigger Positioning */
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
     .cta-btn.terminal-trigger {
         position: absolute; /* Fix: Ensure absolute positioning for top/right to work */
         right: 1rem !important; /* Move closer to right edge since hamburger is gone */
@@ -1573,7 +1581,7 @@ button:focus-visible {
         color: var(--accent-orange);
     }
 
-    /* Adjust Brand to center or right to avoid overlap if needed, 
+    /* Adjust Brand to center or right to avoid overlap if needed,
        but currently it's flex-start. Let's push it a bit if needed. */
     .brand {
         margin-left: 50px; /* Make space for the button */
