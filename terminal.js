@@ -86,26 +86,27 @@ class SiteSyncTerminal {
             {
                 lines: [
                     { text: "", pause: 100 },
-                    { text: "THE PROBLEM:", style: "highlight" },
-                    { text: "Every time a contractor leaves, your building loses its memory.", pause: 800 },
-                    { text: "Critical knowledge stays with the service provider.", pause: 1500 }
+                    { text: "THE PROBLEM:", style: "error" },
+                    { text: "Every time a contractor leaves, your building loses its memory.", pause: 600 },
+                    { text: "Critical knowledge stays with the service provider.", pause: 1200 }
                 ]
             },
             {
                 lines: [
-                    { text: "THE SOLUTION:", style: "success", pause: 500 },
-                    { text: "One platform connecting Buildings, Trades, and AI.", pause: 1000 },
+                    { text: "THE SOLUTION:", style: "success", pause: 400 },
+                    { text: "One platform connecting Buildings, Trades, and AI.", pause: 800 },
+                    { text: "", pause: 200 },
                     { text: "1. PERMANENT MEMORY", style: "info" },
-                    { text: "Data stays with the building, forever." },
+                    { text: "Data stays with the building, forever.", pause: 400 },
                     { text: "2. SHARED INTELLIGENCE", style: "info" },
-                    { text: "When one technician solves a problem, the entire network learns." },
+                    { text: "When one technician solves a problem, the entire network learns.", pause: 400 },
                     { text: "3. TOTAL OVERSIGHT", style: "info" },
-                    { text: "Command the pulse of your building. Every trade, every asset, every moment.", pause: 2000 }
+                    { text: "Command the pulse of your building. Every trade, every asset, every moment.", pause: 1500 }
                 ]
             },
             {
                 lines: [
-                    { text: "", pause: 500 },
+                    { text: "", pause: 300 },
                     { text: "Your Building. Your Data.", style: "accent", pause: 1000 }
                 ]
             },
