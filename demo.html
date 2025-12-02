@@ -1,3 +1,66 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            SITESYNC DEMO                                       ║
+║                    Production-Ready Interactive Demo                           ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                                                                               ║
+║  OVERVIEW                                                                      ║
+║  ─────────────────────────────────────────────────────────────────────────────║
+║  This demo showcases SiteSync's "invisible AI" building management platform   ║
+║  through a ~90 second cinematic video experience and interactive exploration. ║
+║                                                                               ║
+║  DEMO PATHS                                                                    ║
+║  ─────────────────────────────────────────────────────────────────────────────║
+║  1. Watch It In Action (~90 sec) - Automated emergency response sequence      ║
+║  2. Test the Demo - Interactive role-based exploration                        ║
+║                                                                               ║
+║  KEY FEATURES                                                                  ║
+║  ─────────────────────────────────────────────────────────────────────────────║
+║  • iPhone 17 Pro frame with iOS 26 design language                            ║
+║  • GSAP-powered 60fps animations                                              ║
+║  • iOS-accurate notifications, prompts, and HUD components                    ║
+║  • "Building Remembers Forever" emotional narrative                           ║
+║  • Accessibility: reduced motion, focus-visible states                        ║
+║                                                                               ║
+║  BUILD PHASES (17 phases completed)                                           ║
+║  ─────────────────────────────────────────────────────────────────────────────║
+║  Phase 1:  Research & Competitive Analysis                                    ║
+║  Phase 2:  Design System Foundation (CSS custom properties)                   ║
+║  Phase 3:  Component Architecture (utility classes)                           ║
+║  Phase 4:  iPhone Frame & Chrome                                              ║
+║  Phase 5:  Entry Screen                                                       ║
+║  Phase 6:  Dashboard View                                                     ║
+║  Phase 7:  iOS Notification System                                            ║
+║  Phase 8:  Emergency Response View                                            ║
+║  Phase 9:  Prompt System                                                      ║
+║  Phase 10: Memory HUD & Bridge Moment                                         ║
+║  Phase 11: Repair History View                                                ║
+║  Phase 12: Master GSAP Timeline                                               ║
+║  Phase 13: Micro-interactions & Polish                                        ║
+║  Phase 14: Testing & Quality Assurance                                        ║
+║  Phase 15: Sound Design (optional - skipped)                                  ║
+║  Phase 16: Documentation & Handoff                                            ║
+║  Phase 17: Launch Preparation                                                 ║
+║                                                                               ║
+║  DESIGN TOKENS                                                                 ║
+║  ─────────────────────────────────────────────────────────────────────────────║
+║  Colors:    --sitesync-orange, --ios-blue/green/red, --surface-*              ║
+║  Type:      --text-large-title through --text-caption-2 (iOS scale)          ║
+║  Spacing:   --space-1 through --space-20 (4px base unit)                      ║
+║  Animation: --duration-*, --ease-* (iOS-accurate curves)                      ║
+║  Device:    --iphone-width/height, --safe-area-*, --dynamic-island-*          ║
+║                                                                               ║
+║  TIMELINE LABELS (video demo)                                                  ║
+║  ─────────────────────────────────────────────────────────────────────────────║
+║  start → alert → tapNotification → emergencyScreen → quirk → confirmed →      ║
+║  promptReport → tapYes1 → onSite → working → techUpdate → resolved →          ║
+║  promptClose → tapYes2 → memoryHUD → summary → historyLink → autoHistory      ║
+║                                                                               ║
+║  Built: December 2025                                                          ║
+║  Docs: DEMO_BUILD_PLAN.md, PHASE_1_RESEARCH.md                                ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +74,482 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* ═══════════════════════════════════════════════════════════
+           DESIGN SYSTEM FOUNDATION - Phase 2
+           Comprehensive design tokens for iOS-accurate SiteSync demo
+           ═══════════════════════════════════════════════════════════ */
+
         :root {
-            --bg: #000;
-            --surface: #1c1c1e;
-            --surface-2: #2c2c2e;
-            --text: #ffffff;
-            --text-secondary: #98989f;
-            --accent: #e65100;
-            --accent-glow: rgba(230, 81, 0, 0.3);
-            --blue: #0a84ff;
-            --green: #30d158;
-            --yellow: #ffd60a;
-            --red: #ff453a;
-            --font: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            /* ─────────────────────────────────────────────────────────
+               1. COLOR SYSTEM
+               ───────────────────────────────────────────────────────── */
+
+            /* Brand Colors */
+            --sitesync-orange: #e65100;
+            --sitesync-orange-light: #ff6d00;
+            --sitesync-orange-dark: #bf4400;
+            --sitesync-orange-glow: rgba(230, 81, 0, 0.3);
+            --sitesync-orange-subtle: rgba(230, 81, 0, 0.1);
+
+            /* iOS System Colors (Dark Mode) */
+            --ios-blue: #0a84ff;
+            --ios-green: #30d158;
+            --ios-yellow: #ffd60a;
+            --ios-orange: #ff9500;
+            --ios-red: #ff453a;
+            --ios-pink: #ff375f;
+            --ios-purple: #bf5af2;
+            --ios-teal: #64d2ff;
+            --ios-indigo: #5e5ce6;
+
+            /* Dark Mode Surfaces (iOS Design Language) */
+            --surface-base: #000000;
+            --surface-elevated: #1c1c1e;
+            --surface-elevated-2: #2c2c2e;
+            --surface-elevated-3: #3a3a3c;
+            --surface-grouped: #1c1c1e;
+            --surface-grouped-secondary: #2c2c2e;
+
+            /* Text Colors */
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.6);
+            --text-tertiary: rgba(255, 255, 255, 0.4);
+            --text-quaternary: rgba(255, 255, 255, 0.2);
+            --text-placeholder: rgba(255, 255, 255, 0.3);
+
+            /* Borders & Dividers */
+            --divider: rgba(255, 255, 255, 0.1);
+            --divider-opaque: #38383a;
+            --border-subtle: rgba(255, 255, 255, 0.15);
+            --border-medium: rgba(255, 255, 255, 0.25);
+
+            /* Semantic Colors */
+            --color-success: var(--ios-green);
+            --color-warning: var(--ios-yellow);
+            --color-error: var(--ios-red);
+            --color-info: var(--ios-blue);
+            --color-alert: var(--ios-red);
+
+            /* Legacy aliases (for backwards compatibility) */
+            --bg: var(--surface-base);
+            --surface: var(--surface-elevated);
+            --surface-2: var(--surface-elevated-2);
+            --text: var(--text-primary);
+            --text-secondary-old: #98989f;
+            --accent: var(--sitesync-orange);
+            --accent-glow: var(--sitesync-orange-glow);
+            --blue: var(--ios-blue);
+            --green: var(--ios-green);
+            --yellow: var(--ios-yellow);
+            --red: var(--ios-red);
+
+            /* ─────────────────────────────────────────────────────────
+               2. TYPOGRAPHY SCALE (iOS 17+ Specifications)
+               ───────────────────────────────────────────────────────── */
+
+            /* Font Families */
+            --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+            --font-text: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+            --font-mono: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace;
+            --font: var(--font-system);
+
+            /* iOS Type Scale (points → pixels at 1x) */
+            --text-large-title: 34px;      /* Bold, SF Pro Display */
+            --text-title-1: 28px;          /* Bold, SF Pro Display */
+            --text-title-2: 22px;          /* Bold, SF Pro Display */
+            --text-title-3: 20px;          /* Semibold, SF Pro Display */
+            --text-headline: 17px;         /* Semibold, SF Pro Text */
+            --text-body: 17px;             /* Regular, SF Pro Text */
+            --text-callout: 16px;          /* Regular, SF Pro Text */
+            --text-subhead: 15px;          /* Regular, SF Pro Text */
+            --text-footnote: 13px;         /* Regular, SF Pro Text */
+            --text-caption-1: 12px;        /* Regular, SF Pro Text */
+            --text-caption-2: 11px;        /* Regular, SF Pro Text */
+
+            /* Font Weights */
+            --weight-regular: 400;
+            --weight-medium: 500;
+            --weight-semibold: 600;
+            --weight-bold: 700;
+
+            /* Line Heights */
+            --leading-tight: 1.1;
+            --leading-snug: 1.25;
+            --leading-normal: 1.4;
+            --leading-relaxed: 1.5;
+
+            /* Letter Spacing */
+            --tracking-tight: -0.02em;
+            --tracking-normal: 0;
+            --tracking-wide: 0.05em;
+            --tracking-wider: 0.1em;
+            --tracking-widest: 0.15em;
+
+            /* ─────────────────────────────────────────────────────────
+               3. SPACING SYSTEM (4px base unit)
+               ───────────────────────────────────────────────────────── */
+
+            --space-0: 0;
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 20px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-10: 40px;
+            --space-12: 48px;
+            --space-16: 64px;
+            --space-20: 80px;
+
+            /* ─────────────────────────────────────────────────────────
+               4. ANIMATION TOKENS
+               ───────────────────────────────────────────────────────── */
+
+            /* Durations */
+            --duration-instant: 0ms;
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+            --duration-slow: 350ms;
+            --duration-slower: 500ms;
+            --duration-notification: 4500ms;  /* iOS notification auto-dismiss */
+
+            /* Easings (iOS-accurate curves) */
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+            --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --ease-ios: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+            /* ─────────────────────────────────────────────────────────
+               5. IPHONE 17 PRO DIMENSIONS (2025)
+               ───────────────────────────────────────────────────────── */
+
+            --iphone-width: 402px;
+            --iphone-height: 874px;
+            --iphone-corner-radius: 55px;
+            --iphone-bezel: 3px;
+
+            /* Safe Areas */
+            --safe-area-top: 62px;
+            --safe-area-bottom: 34px;
+            --safe-area-left: 0px;
+            --safe-area-right: 0px;
+
+            /* Status Bar */
+            --status-bar-height: 54px;
+
+            /* Dynamic Island */
+            --dynamic-island-width: 126px;
+            --dynamic-island-height: 37px;
+            --dynamic-island-radius: 20px;
+
+            /* Home Indicator */
+            --home-indicator-width: 134px;
+            --home-indicator-height: 5px;
+            --home-indicator-bottom: 8px;
+
+            /* ─────────────────────────────────────────────────────────
+               6. COMPONENT TOKENS
+               ───────────────────────────────────────────────────────── */
+
+            /* Cards */
+            --card-radius: 16px;
+            --card-radius-sm: 12px;
+            --card-radius-lg: 20px;
+            --card-padding: var(--space-4);
+            --card-gap: var(--space-3);
+
+            /* Buttons */
+            --button-radius: 12px;
+            --button-height: 44px;
+            --button-height-sm: 36px;
+            --button-height-lg: 50px;
+
+            /* Notifications */
+            --notification-radius: 20px;
+            --notification-padding: var(--space-3) var(--space-4);
+
+            /* Status Indicators */
+            --status-dot-size: 8px;
+            --status-dot-size-lg: 12px;
+
+            /* Health Ring */
+            --health-ring-size: 80px;
+            --health-ring-size-lg: 100px;
+            --health-ring-stroke: 8px;
+
+            /* ─────────────────────────────────────────────────────────
+               7. SHADOWS & EFFECTS
+               ───────────────────────────────────────────────────────── */
+
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.6);
+
+            /* Glows */
+            --glow-orange: 0 0 20px var(--sitesync-orange-glow);
+            --glow-red: 0 0 20px rgba(255, 69, 58, 0.4);
+            --glow-green: 0 0 20px rgba(48, 209, 88, 0.4);
+            --glow-blue: 0 0 20px rgba(10, 132, 255, 0.4);
+
+            /* Backdrop Blur */
+            --blur-sm: blur(8px);
+            --blur-md: blur(16px);
+            --blur-lg: blur(24px);
+
+            /* ─────────────────────────────────────────────────────────
+               8. Z-INDEX SCALE
+               ───────────────────────────────────────────────────────── */
+
+            --z-base: 0;
+            --z-dropdown: 10;
+            --z-sticky: 20;
+            --z-overlay: 30;
+            --z-modal: 40;
+            --z-notification: 50;
+            --z-tooltip: 60;
+            --z-max: 100;
         }
+
+        /* ═══════════════════════════════════════════════════════════
+           COMPONENT ARCHITECTURE - Phase 3
+           Reusable component patterns, states, and utilities
+           ═══════════════════════════════════════════════════════════ */
+
+        /* ─────────────────────────────────────────────────────────
+           COMPONENT INVENTORY
+
+           | Component        | Variants                   | States                          |
+           |------------------|----------------------------|----------------------------------|
+           | ios-notification | alert, info, success       | hidden, visible, dismissed       |
+           | prompt-overlay   | dual-action                | hidden, visible                  |
+           | brief-confirm    | success, info              | hidden, appearing, visible       |
+           | memory-hud       | -                          | hidden, appearing, visible       |
+           | health-ring      | sm, default, lg            | static, animating                |
+           | equipment-card   | -                          | ok, alert, working, success      |
+           | status-dot       | green, yellow, orange, red | static, pulsing                  |
+           | history-item     | current, past              | hidden, visible, just-saved      |
+           | entry-path       | primary, secondary         | default, hover, active           |
+           | cta-button       | -                          | default, pulsing                 |
+           ───────────────────────────────────────────────────────── */
+
+        /* ─────────────────────────────────────────────────────────
+           STATE UTILITY CLASSES
+           ───────────────────────────────────────────────────────── */
+
+        /* Visibility States */
+        .is-hidden {
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        .is-visible {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        .is-invisible {
+            visibility: hidden !important;
+        }
+
+        /* Status Colors */
+        .status-ok { color: var(--ios-green); }
+        .status-warning { color: var(--ios-yellow); }
+        .status-alert { color: var(--ios-red); }
+        .status-working { color: var(--ios-orange); }
+        .status-info { color: var(--ios-blue); }
+
+        .bg-status-ok { background-color: var(--ios-green); }
+        .bg-status-warning { background-color: var(--ios-yellow); }
+        .bg-status-alert { background-color: var(--ios-red); }
+        .bg-status-working { background-color: var(--ios-orange); }
+        .bg-status-info { background-color: var(--ios-blue); }
+
+        /* ─────────────────────────────────────────────────────────
+           ANIMATION UTILITY CLASSES
+           ───────────────────────────────────────────────────────── */
+
+        /* Pulsing Effect */
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Status Pulse (for alert dots) */
+        .pulse-status {
+            animation: pulseStatus 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulseStatus {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 currentColor; }
+            50% { transform: scale(1.1); box-shadow: 0 0 8px 2px currentColor; }
+        }
+
+        /* Glow Pulse (for buttons) */
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 var(--sitesync-orange-glow); }
+            50% { box-shadow: 0 0 20px 4px var(--sitesync-orange-glow); }
+        }
+
+        /* Breathe Effect (for ambient elements) */
+        .breathe {
+            animation: breathe 6s ease-in-out infinite;
+        }
+
+        /* Fade In */
+        .fade-in {
+            animation: fadeIn var(--duration-normal) var(--ease-out) forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Fade In Up */
+        .fade-in-up {
+            animation: fadeInUp var(--duration-normal) var(--ease-out) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Slide In Right */
+        .slide-in-right {
+            animation: slideInRight var(--duration-normal) var(--ease-out) forwards;
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Scale In */
+        .scale-in {
+            animation: scaleIn var(--duration-fast) var(--ease-bounce) forwards;
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ─────────────────────────────────────────────────────────
+           REDUCED MOTION SUPPORT
+           ───────────────────────────────────────────────────────── */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ─────────────────────────────────────────────────────────
+           TYPOGRAPHY UTILITY CLASSES
+           ───────────────────────────────────────────────────────── */
+
+        .text-large-title {
+            font-size: var(--text-large-title);
+            font-weight: var(--weight-bold);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .text-title-1 {
+            font-size: var(--text-title-1);
+            font-weight: var(--weight-bold);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .text-title-2 {
+            font-size: var(--text-title-2);
+            font-weight: var(--weight-bold);
+        }
+
+        .text-title-3 {
+            font-size: var(--text-title-3);
+            font-weight: var(--weight-semibold);
+        }
+
+        .text-headline {
+            font-size: var(--text-headline);
+            font-weight: var(--weight-semibold);
+        }
+
+        .text-body {
+            font-size: var(--text-body);
+            font-weight: var(--weight-regular);
+        }
+
+        .text-callout {
+            font-size: var(--text-callout);
+            font-weight: var(--weight-regular);
+        }
+
+        .text-subhead {
+            font-size: var(--text-subhead);
+            font-weight: var(--weight-regular);
+        }
+
+        .text-footnote {
+            font-size: var(--text-footnote);
+            font-weight: var(--weight-regular);
+        }
+
+        .text-caption {
+            font-size: var(--text-caption-1);
+            font-weight: var(--weight-regular);
+        }
+
+        /* Text Colors */
+        .text-primary { color: var(--text-primary); }
+        .text-secondary { color: var(--text-secondary); }
+        .text-tertiary { color: var(--text-tertiary); }
+        .text-accent { color: var(--sitesync-orange); }
+
+        /* ─────────────────────────────────────────────────────────
+           SPACING UTILITY CLASSES
+           ───────────────────────────────────────────────────────── */
+
+        .gap-1 { gap: var(--space-1); }
+        .gap-2 { gap: var(--space-2); }
+        .gap-3 { gap: var(--space-3); }
+        .gap-4 { gap: var(--space-4); }
+        .gap-6 { gap: var(--space-6); }
+
+        .p-1 { padding: var(--space-1); }
+        .p-2 { padding: var(--space-2); }
+        .p-3 { padding: var(--space-3); }
+        .p-4 { padding: var(--space-4); }
+        .p-6 { padding: var(--space-6); }
+
+        .mt-1 { margin-top: var(--space-1); }
+        .mt-2 { margin-top: var(--space-2); }
+        .mt-3 { margin-top: var(--space-3); }
+        .mt-4 { margin-top: var(--space-4); }
+        .mt-6 { margin-top: var(--space-6); }
+
+        .mb-1 { margin-bottom: var(--space-1); }
+        .mb-2 { margin-bottom: var(--space-2); }
+        .mb-3 { margin-bottom: var(--space-3); }
+        .mb-4 { margin-bottom: var(--space-4); }
+        .mb-6 { margin-bottom: var(--space-6); }
 
         html, body {
             height: 100%;
@@ -93,11 +618,16 @@
             stroke-width: 2;
         }
 
-        /* iPhone Frame */
+        /* ═══════════════════════════════════════
+           IPHONE 17 PRO FRAME - Phase 4
+           Pixel-perfect device chrome
+           ═══════════════════════════════════════ */
+
         .iphone {
+            /* Responsive sizing with iPhone 17 Pro aspect ratio (402:874 = 0.46) */
             --h: clamp(480px, 80vh, 780px);
-            --w: calc(var(--h) * 0.462);
-            --r: calc(var(--h) * 0.058);
+            --w: calc(var(--h) * 0.46);
+            --r: calc(var(--h) * 0.063); /* 55px / 874px */
 
             position: relative;
             width: var(--w);
@@ -105,23 +635,43 @@
             background: #1a1a1a;
             border-radius: var(--r);
             box-shadow:
+                /* Inner highlight */
                 inset 0 0 0 1px rgba(255,255,255,0.1),
+                /* Outer edge */
                 0 0 0 1px rgba(0,0,0,0.5),
+                /* Drop shadow */
                 0 40px 80px -20px rgba(0,0,0,0.8),
-                0 0 60px -10px var(--accent-glow);
+                /* Ambient brand glow */
+                0 0 60px -10px var(--sitesync-orange-glow);
         }
 
-        /* Titanium Frame Edge */
+        /* Titanium Frame Edge - Natural Titanium finish */
         .iphone::before {
             content: '';
             position: absolute;
             inset: -1px;
             border-radius: calc(var(--r) + 1px);
             background: linear-gradient(135deg,
-                rgba(255,255,255,0.2) 0%,
-                rgba(255,255,255,0.05) 50%,
-                rgba(255,255,255,0.1) 100%);
+                rgba(255,255,255,0.25) 0%,
+                rgba(255,255,255,0.03) 40%,
+                rgba(255,255,255,0.08) 60%,
+                rgba(255,255,255,0.15) 100%);
             z-index: -1;
+        }
+
+        /* Subtle titanium texture overlay */
+        .iphone::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--r);
+            background: linear-gradient(180deg,
+                rgba(255,255,255,0.02) 0%,
+                transparent 20%,
+                transparent 80%,
+                rgba(0,0,0,0.1) 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Screen */
@@ -245,6 +795,12 @@
             transform: scale(0.98);
         }
 
+        /* Phase 13: Focus states for accessibility */
+        .role-card:focus-visible {
+            outline: 2px solid var(--ios-blue);
+            outline-offset: 2px;
+        }
+
         .role-icon {
             width: 48px;
             height: 48px;
@@ -305,30 +861,87 @@
             background: #000;
         }
 
-        /* iOS Status Bar */
+        /* iOS Status Bar - Phase 4 Enhancement */
         .status-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: calc(var(--h) * 0.016) calc(var(--w) * 0.06) 0;
-            height: calc(var(--h) * 0.055);
+            padding: calc(var(--h) * 0.014) calc(var(--w) * 0.06) 0;
+            height: calc(var(--h) * 0.062); /* Match safe-area-top ratio */
+            color: var(--text-primary);
         }
 
         .status-time {
-            font-size: calc(var(--w) * 0.038);
+            font-size: calc(var(--w) * 0.04);
             font-weight: 600;
+            letter-spacing: 0.5px;
+            font-variant-numeric: tabular-nums;
         }
 
         .status-icons {
             display: flex;
-            gap: 4px;
+            gap: calc(var(--w) * 0.015);
             align-items: center;
         }
 
         .status-icons svg {
-            width: calc(var(--w) * 0.045);
-            height: calc(var(--w) * 0.045);
+            height: calc(var(--w) * 0.032);
             fill: #fff;
+        }
+
+        /* Signal Bars */
+        .status-signal {
+            display: flex;
+            gap: 1px;
+            align-items: flex-end;
+            height: calc(var(--w) * 0.032);
+        }
+
+        .status-signal span {
+            width: calc(var(--w) * 0.008);
+            background: #fff;
+            border-radius: 1px;
+        }
+
+        .status-signal span:nth-child(1) { height: 25%; }
+        .status-signal span:nth-child(2) { height: 45%; }
+        .status-signal span:nth-child(3) { height: 70%; }
+        .status-signal span:nth-child(4) { height: 100%; }
+
+        /* WiFi Icon */
+        .status-wifi {
+            width: calc(var(--w) * 0.042);
+        }
+
+        /* Battery Icon */
+        .status-battery {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+        }
+
+        .status-battery-body {
+            width: calc(var(--w) * 0.06);
+            height: calc(var(--w) * 0.028);
+            border: 1.5px solid #fff;
+            border-radius: 3px;
+            padding: 1.5px;
+            position: relative;
+        }
+
+        .status-battery-fill {
+            height: 100%;
+            width: 100%;
+            background: #fff;
+            border-radius: 1px;
+        }
+
+        .status-battery-cap {
+            width: calc(var(--w) * 0.006);
+            height: calc(var(--w) * 0.012);
+            background: #fff;
+            border-radius: 0 1px 1px 0;
+            opacity: 0.5;
         }
 
         /* App Navigation */
@@ -661,6 +1274,1055 @@
         @media (max-height: 600px) {
             .iphone { --h: 85vh; }
         }
+
+        /* ═══════════════════════════════════════
+           WATCH IT IN ACTION - ENTRY SCREEN
+           ═══════════════════════════════════════ */
+        .entry-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 40px 20px;
+            background: #000;
+            text-align: center;
+            position: relative;
+        }
+
+        .entry-glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(230, 81, 0, 0.3) 0%, transparent 70%);
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .entry-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .entry-logo .logo-mark {
+            width: 32px;
+            height: 32px;
+        }
+
+        .entry-logo .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #fff;
+        }
+
+        .entry-tagline {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .entry-paths {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .entry-path {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: left;
+        }
+
+        .entry-path:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .entry-path:active {
+            transform: scale(0.98);
+        }
+
+        /* Phase 13: Focus states for accessibility */
+        .entry-path:focus-visible {
+            outline: 2px solid var(--ios-blue);
+            outline-offset: 2px;
+        }
+
+        .entry-path.watch-path {
+            background: linear-gradient(135deg, rgba(230, 81, 0, 0.15) 0%, rgba(230, 81, 0, 0.05) 100%);
+            border-color: rgba(230, 81, 0, 0.3);
+        }
+
+        .path-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .watch-path .path-icon {
+            background: var(--accent);
+        }
+
+        .path-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+            stroke: none;
+        }
+
+        .test-path .path-icon svg {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2;
+        }
+
+        .path-content {
+            flex: 1;
+        }
+
+        .path-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .path-subtitle {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .path-duration {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+
+        .path-arrow {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .entry-path:hover .path-arrow {
+            transform: translateX(4px);
+            color: var(--accent);
+        }
+
+        .entry-hint {
+            position: absolute;
+            bottom: 30px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ═══════════════════════════════════════
+           iOS NOTIFICATION BANNER
+           ═══════════════════════════════════════ */
+        .ios-notification {
+            position: absolute;
+            top: calc(var(--h) * 0.014 + 30px);
+            left: 8px;
+            right: 8px;
+            background: rgba(30, 30, 32, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            transform: translateY(-120%);
+            opacity: 0;
+            z-index: 100;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+
+        .ios-notification.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .ios-notification:active {
+            transform: scale(0.98);
+        }
+
+        .ios-notification[data-type="alert"] {
+            border-left: 3px solid var(--red);
+        }
+
+        .ios-notification[data-type="success"] {
+            border-left: 3px solid var(--green);
+        }
+
+        .ios-notification[data-type="info"] {
+            border-left: 3px solid var(--blue);
+        }
+
+        .notification-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #E65100 0%, #FF6D00 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .notification-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            stroke: none;
+        }
+
+        .notification-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .notification-app {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .notification-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .notification-body {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .notification-time {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            flex-shrink: 0;
+        }
+
+        /* ═══════════════════════════════════════
+           SIMPLE PROMPT COMPONENT
+           ═══════════════════════════════════════ */
+        .prompt-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 200;
+        }
+
+        .prompt-overlay.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .prompt-card {
+            background: var(--surface-2);
+            border-radius: 16px;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .prompt-overlay.visible .prompt-card {
+            transform: translateY(0);
+        }
+
+        .prompt-text {
+            font-size: 17px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .prompt-context {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: -12px;
+            margin-bottom: 16px;
+        }
+
+        .prompt-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .prompt-btn {
+            flex: 1;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+            font-family: var(--font);
+        }
+
+        .prompt-btn:active {
+            transform: scale(0.96);
+        }
+
+        .prompt-btn.primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .prompt-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Phase 13: Enhanced button interactions */
+        .prompt-btn:hover {
+            filter: brightness(1.1);
+        }
+
+        .prompt-btn:focus-visible {
+            outline: 2px solid var(--ios-blue);
+            outline-offset: 2px;
+        }
+
+        .prompt-btn.primary:hover {
+            background: var(--sitesync-orange-light);
+        }
+
+        .prompt-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Brief confirmation toast */
+        .brief-confirm {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(30, 30, 32, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--green);
+            opacity: 0;
+            z-index: 250;
+        }
+
+        /* ═══════════════════════════════════════
+           MEMORY HUD (Building Saves)
+           ═══════════════════════════════════════ */
+        .memory-hud {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(30, 30, 32, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 20px 28px;
+            text-align: center;
+            opacity: 0;
+            z-index: 300;
+        }
+
+        .memory-hud-icon {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 12px;
+            background: rgba(230, 81, 0, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .memory-hud-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 2;
+        }
+
+        .memory-hud-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        /* ═══════════════════════════════════════
+           REPAIR HISTORY VIEW
+           ═══════════════════════════════════════ */
+        .repair-history {
+            padding: 20px 16px;
+            background: #000;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .history-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .history-elevator-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .history-elevator-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .history-count {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .history-timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .history-item {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .history-item::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 18px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid #000;
+        }
+
+        .history-item.current::before {
+            background: var(--accent);
+        }
+
+        .history-item.just-saved {
+            background: rgba(230, 81, 0, 0.1);
+            border: 1px solid rgba(230, 81, 0, 0.3);
+            animation: justSavedGlow 2s ease-in-out infinite;
+        }
+
+        .history-item.just-saved::before {
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+        }
+
+        @keyframes justSavedGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(230, 81, 0, 0); }
+            50% { box-shadow: 0 0 12px 2px rgba(230, 81, 0, 0.2); }
+        }
+
+        .just-saved-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
+        }
+
+        .history-date {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .history-repair {
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .history-tech {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .history-contractor {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 2px;
+        }
+
+        .history-item[data-contractor="different"] .history-contractor {
+            color: var(--accent);
+        }
+
+        .memory-tagline {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+        }
+
+        .memory-tagline-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .memory-tagline-sub {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 4px;
+        }
+
+        /* ═══════════════════════════════════════
+           VIDEO DEMO DASHBOARD
+           ═══════════════════════════════════════ */
+        .video-dashboard {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+        }
+
+        .dashboard-header {
+            padding: 60px 16px 16px;
+        }
+
+        .dashboard-greeting {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 4px;
+        }
+
+        .dashboard-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .health-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 0 16px 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .health-ring-small {
+            width: 64px;
+            height: 64px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .health-ring-small svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .health-ring-small .bg {
+            fill: none;
+            stroke: var(--surface-2);
+            stroke-width: 6;
+        }
+
+        .health-ring-small .progress {
+            fill: none;
+            stroke: url(#healthGradient);
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-dasharray: 157;
+            stroke-dashoffset: 16;
+            transition: stroke-dashoffset 1.5s ease;
+        }
+
+        .health-ring-small .health-value {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .health-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .health-info p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .equipment-section {
+            padding: 0 16px;
+        }
+
+        .equipment-section h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+
+        .equipment-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 8px;
+            transition: box-shadow 0.3s;
+        }
+
+        .equipment-icon {
+            font-size: 20px;
+        }
+
+        .equipment-info {
+            flex: 1;
+        }
+
+        .equipment-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .equipment-meta {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .equipment-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-dot.green { background: var(--green); }
+        .status-dot.yellow { background: var(--yellow); }
+        .status-dot.red { background: var(--red); }
+        .status-dot.orange { background: var(--accent); }
+
+        .status-text.green { color: var(--green); }
+        .status-text.red { color: var(--red); }
+        .status-text.orange { color: var(--accent); }
+
+        /* Work icon animation */
+        .work-icon {
+            display: inline-block;
+        }
+
+        .work-icon.spinning {
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ═══════════════════════════════════════
+           EMERGENCY RESPONSE SCREEN
+           ═══════════════════════════════════════ */
+        .emergency-screen {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+            overflow-y: auto;
+        }
+
+        .emergency-header {
+            background: linear-gradient(180deg, rgba(255, 59, 48, 0.2) 0%, transparent 100%);
+            padding: 60px 16px 20px;
+            text-align: center;
+        }
+
+        .emergency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--red);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .emergency-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .emergency-location {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .emergency-body {
+            padding: 16px;
+            flex: 1;
+        }
+
+        .response-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .response-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .diagnosis-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .diagnosis-detail {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .technician-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tech-avatar-small {
+            width: 44px;
+            height: 44px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .tech-details {
+            flex: 1;
+        }
+
+        .tech-name-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-name-small {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .tech-status {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--green);
+            background: rgba(48, 209, 88, 0.15);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .tech-company {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .tech-eta {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .change-link {
+            font-size: 13px;
+            color: var(--blue);
+            text-decoration: none;
+            margin-top: 12px;
+            display: inline-block;
+        }
+
+        .cost-estimate {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cost-value {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .quirk-card {
+            background: rgba(10, 132, 255, 0.1);
+            border: 1px solid rgba(10, 132, 255, 0.3);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .quirk-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quirk-icon {
+            font-size: 18px;
+        }
+
+        .quirk-text {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* Summary card */
+        .summary-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .summary-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .summary-stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 12px;
+        }
+
+        .summary-stat {
+            text-align: center;
+        }
+
+        .summary-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .summary-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .insight-text {
+            font-size: 13px;
+            color: var(--blue);
+            margin-top: 8px;
+        }
+
+        .history-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            color: var(--accent);
+            margin-top: 16px;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .history-link.visible {
+            opacity: 1;
+        }
+
+        /* CTA Button */
+        .demo-cta {
+            background: var(--accent);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            opacity: 0;
+            transform: translateY(10px);
+            font-family: var(--font);
+        }
+
+        .demo-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Video controls */
+        .video-controls {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 50;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-controls.visible {
+            opacity: 1;
+        }
+
+        .control-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .control-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: #fff;
+        }
     </style>
 </head>
 <body>
@@ -686,8 +2348,294 @@
                     </defs>
                 </svg>
 
-                <!-- ROLE SELECTION -->
-                <div class="view active" id="roleSelect">
+                <!-- ENTRY SCREEN - Two Path Selection -->
+                <div class="view active" id="entryScreen">
+                    <div class="entry-screen">
+                        <div class="entry-glow"></div>
+
+                        <div class="entry-logo">
+                            <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="none" stroke="#e65100" stroke-width="1.5"/>
+                                <rect x="8" y="8" width="8" height="8" rx="0.5" transform="rotate(45 12 12)" fill="#e65100"/>
+                            </svg>
+                            <span class="logo-text">SITESYNC</span>
+                        </div>
+
+                        <p class="entry-tagline">Building Management, Simplified</p>
+
+                        <div class="entry-paths">
+                            <button class="entry-path watch-path" data-path="video">
+                                <div class="path-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <polygon points="5 3 19 12 5 21 5 3"/>
+                                    </svg>
+                                </div>
+                                <div class="path-content">
+                                    <div class="path-title">Watch It In Action</div>
+                                    <div class="path-subtitle">See a real emergency response</div>
+                                </div>
+                                <span class="path-duration">~90 sec</span>
+                            </button>
+
+                            <button class="entry-path test-path" data-path="demo">
+                                <div class="path-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                        <path d="M12 8v8M8 12h8" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="path-content">
+                                    <div class="path-title">Test the Demo</div>
+                                    <div class="path-subtitle">Explore at your own pace</div>
+                                </div>
+                                <span class="path-arrow">→</span>
+                            </button>
+                        </div>
+
+                        <p class="entry-hint">Choose your experience</p>
+                    </div>
+                </div>
+
+                <!-- VIDEO DEMO - Dashboard -->
+                <div class="view" id="videoDashboard">
+                    <div class="video-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-greeting">Good morning, Sarah</div>
+                            <div class="dashboard-title">Collins Tower</div>
+                        </div>
+
+                        <div class="health-card">
+                            <div class="health-ring-small">
+                                <svg viewBox="0 0 50 50">
+                                    <circle class="bg" cx="25" cy="25" r="20"/>
+                                    <circle class="progress" cx="25" cy="25" r="20"/>
+                                </svg>
+                                <span class="health-value">94</span>
+                            </div>
+                            <div class="health-info">
+                                <h3>Building Health</h3>
+                                <p>All systems operational</p>
+                            </div>
+                        </div>
+
+                        <div class="equipment-section">
+                            <h4>Equipment</h4>
+
+                            <div class="equipment-item" id="lift1">
+                                <span class="equipment-icon">🛗</span>
+                                <div class="equipment-info">
+                                    <div class="equipment-name">Lift 1</div>
+                                    <div class="equipment-meta">KONE MonoSpace</div>
+                                </div>
+                                <div class="equipment-status">
+                                    <span class="status-dot green"></span>
+                                    <span class="status-text green">OK</span>
+                                </div>
+                            </div>
+
+                            <div class="equipment-item" id="lift2">
+                                <span class="equipment-icon">🛗</span>
+                                <div class="equipment-info">
+                                    <div class="equipment-name">Lift 2</div>
+                                    <div class="equipment-meta">KONE MonoSpace</div>
+                                </div>
+                                <div class="equipment-status">
+                                    <span class="status-dot green" id="lift2Dot"></span>
+                                    <span class="status-text green" id="lift2Status">OK</span>
+                                </div>
+                            </div>
+
+                            <div class="equipment-item" id="lift3">
+                                <span class="equipment-icon">🛗</span>
+                                <div class="equipment-info">
+                                    <div class="equipment-name">Lift 3</div>
+                                    <div class="equipment-meta">KONE MonoSpace</div>
+                                </div>
+                                <div class="equipment-status">
+                                    <span class="status-dot green"></span>
+                                    <span class="status-text green">OK</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iOS Notification (slides down) -->
+                    <div class="ios-notification" id="alertNotification" data-type="alert">
+                        <div class="notification-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-app">SITESYNC</div>
+                            <div class="notification-title">🔴 EMERGENCY: Lift 2 stopped</div>
+                            <div class="notification-body">Passengers may be trapped</div>
+                        </div>
+                        <div class="notification-time">now</div>
+                    </div>
+                </div>
+
+                <!-- VIDEO DEMO - Emergency Response -->
+                <div class="view" id="emergencyResponse">
+                    <div class="emergency-screen">
+                        <div class="emergency-header">
+                            <div class="emergency-badge">🔴 Emergency Response Active</div>
+                            <div class="emergency-title">Lift 2 • Stopped</div>
+                            <div class="emergency-location">Collins Tower • Floor 3</div>
+                        </div>
+
+                        <div class="emergency-body">
+                            <div class="response-card diagnosis-card" id="diagnosisCard">
+                                <div class="card-label">Diagnosis</div>
+                                <div class="diagnosis-text">Door sensor fault</div>
+                                <div class="diagnosis-detail">Light curtain misalignment likely</div>
+                            </div>
+
+                            <div class="response-card technician-card" id="technicianCard">
+                                <div class="card-label">Technician Dispatched</div>
+                                <div class="technician-row">
+                                    <div class="tech-avatar-small">👤</div>
+                                    <div class="tech-details">
+                                        <div class="tech-name-row">
+                                            <span class="tech-name-small">Marcus Webb</span>
+                                            <span class="tech-status" id="techStatusBadge">Dispatched</span>
+                                        </div>
+                                        <div class="tech-company">TechServ Pro</div>
+                                    </div>
+                                    <div class="tech-eta" id="techEta">ETA 45 min</div>
+                                </div>
+                                <a href="#" class="change-link">Change</a>
+                                <div class="cost-estimate">Est. cost: <span class="cost-value">$180-250</span></div>
+                            </div>
+
+                            <div class="quirk-card" id="quirkCard">
+                                <span class="quirk-icon">💡</span>
+                                <div class="quirk-text">Known issue with this model in humid conditions. Previous fix: recalibrate door sensors.</div>
+                            </div>
+
+                            <div class="summary-card" id="summaryCard">
+                                <div class="summary-stats">
+                                    <div class="summary-stat">
+                                        <div class="summary-value" id="resolutionTime">47 min</div>
+                                        <div class="summary-label">Resolution</div>
+                                    </div>
+                                    <div class="summary-stat">
+                                        <div class="summary-value" id="finalCost">$220</div>
+                                        <div class="summary-label">Cost</div>
+                                    </div>
+                                </div>
+                                <div class="insight-text">3rd fastest resolution this month</div>
+                                <div class="history-link" id="historyLink">See all Lift 2 repairs →</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications for this view -->
+                    <div class="ios-notification" id="infoNotification" data-type="info">
+                        <div class="notification-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-app">SITESYNC</div>
+                            <div class="notification-title" id="infoTitle">Technician Confirmed</div>
+                            <div class="notification-body" id="infoBody">Marcus Webb • On his way</div>
+                        </div>
+                        <div class="notification-time">now</div>
+                    </div>
+
+                    <div class="ios-notification" id="successNotification" data-type="success">
+                        <div class="notification-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="4" width="16" height="16" rx="1" transform="rotate(45 12 12)" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-app">SITESYNC</div>
+                            <div class="notification-title">✓ Lift 2 back in service</div>
+                            <div class="notification-body">All systems normal</div>
+                        </div>
+                        <div class="notification-time">now</div>
+                    </div>
+
+                    <!-- Simple Prompt Overlay -->
+                    <div class="prompt-overlay" id="promptOverlay">
+                        <div class="prompt-card">
+                            <div class="prompt-text" id="promptText">Send incident report?</div>
+                            <div class="prompt-context" id="promptContext">to strata manager</div>
+                            <div class="prompt-actions">
+                                <button class="prompt-btn secondary" id="promptSecondary">Later</button>
+                                <button class="prompt-btn primary" id="promptPrimary">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brief Confirmation -->
+                    <div class="brief-confirm" id="briefConfirm">Sent ✓</div>
+
+                    <!-- Memory HUD -->
+                    <div class="memory-hud" id="memoryHud">
+                        <div class="memory-hud-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 21V7l9-5 9 5v14H3z"/>
+                                <rect x="9" y="13" width="6" height="8"/>
+                            </svg>
+                        </div>
+                        <div class="memory-hud-text">Saved to Lift 2</div>
+                    </div>
+                </div>
+
+                <!-- VIDEO DEMO - Repair History -->
+                <div class="view" id="repairHistory">
+                    <div class="repair-history">
+                        <div class="history-header">
+                            <div class="history-elevator-icon">🛗</div>
+                            <div class="history-elevator-name">Lift 2</div>
+                            <div class="history-count">13 repairs since 2019</div>
+                        </div>
+
+                        <div class="history-timeline">
+                            <div class="history-item just-saved current" data-contractor="current">
+                                <div class="history-date">Just Now <span class="just-saved-badge">✨ Saved</span></div>
+                                <div class="history-repair">Door sensor recalibrated</div>
+                                <div class="history-tech">Marcus Webb</div>
+                                <div class="history-contractor">TechServ Pro</div>
+                            </div>
+
+                            <div class="history-item" data-contractor="different">
+                                <div class="history-date">Aug 2024</div>
+                                <div class="history-repair">Door alignment adjusted</div>
+                                <div class="history-tech">Jake Torres</div>
+                                <div class="history-contractor">ABC Elevators ← Different contractor</div>
+                            </div>
+
+                            <div class="history-item" data-contractor="different">
+                                <div class="history-date">Mar 2023</div>
+                                <div class="history-repair">Controller software update</div>
+                                <div class="history-tech">Ben Park</div>
+                                <div class="history-contractor">Smith Maintenance</div>
+                            </div>
+
+                            <div class="history-item" data-contractor="different">
+                                <div class="history-date">Nov 2021</div>
+                                <div class="history-repair">Annual service inspection</div>
+                                <div class="history-tech">Original Team</div>
+                                <div class="history-contractor">KONE (original installer)</div>
+                            </div>
+                        </div>
+
+                        <div class="memory-tagline" id="memoryTagline">
+                            <div class="memory-tagline-text">Your building remembers.</div>
+                            <div class="memory-tagline-sub">Forever.</div>
+                        </div>
+
+                        <button class="demo-cta" id="demoCta">Try it yourself →</button>
+                    </div>
+                </div>
+
+                <!-- ROLE SELECTION (Test Demo Path) -->
+                <div class="view" id="roleSelect">
                     <div class="role-screen">
                         <div class="role-header">
                             <h1>Select Role</h1>
@@ -1019,29 +2967,54 @@
     </div>
 
     <script>
+        /* ═══════════════════════════════════════════════════════════
+           GSAP CONFIGURATION - Phase 14 Performance Optimization
+           Force GPU acceleration for 60fps animations
+           ═══════════════════════════════════════════════════════════ */
+        gsap.config({
+            force3D: true,
+            nullTargetWarn: false
+        });
+
         const views = {
             building: 'buildingView',
             tech: 'techView',
             enterprise: 'enterpriseView'
         };
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Ensure cards are visible first
-            document.querySelectorAll('.role-card').forEach(card => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            });
+        // Video Demo State
+        let videoTimeline = null;
+        let isVideoPlaying = false;
 
+        document.addEventListener('DOMContentLoaded', () => {
             // Entrance animation
             gsap.fromTo('.iphone',
                 { y: 50, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
             );
 
-            gsap.fromTo('.role-card',
+            gsap.fromTo('.entry-path',
                 { y: 30, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: 0.3, ease: 'power3.out' }
             );
+
+            // Entry path selection
+            document.querySelectorAll('.entry-path').forEach(path => {
+                path.addEventListener('click', () => {
+                    const pathType = path.dataset.path;
+                    if (pathType === 'video') {
+                        startVideoDemo();
+                    } else if (pathType === 'demo') {
+                        showView('roleSelect');
+                        setTimeout(() => {
+                            gsap.fromTo('.role-card',
+                                { y: 20, opacity: 0 },
+                                { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power3.out' }
+                            );
+                        }, 200);
+                    }
+                });
+            });
 
             // Role card clicks
             document.querySelectorAll('.role-card').forEach(card => {
@@ -1049,6 +3022,24 @@
                     const role = card.dataset.role;
                     showView(views[role]);
                 });
+            });
+
+            // Demo CTA button
+            document.getElementById('demoCta')?.addEventListener('click', () => {
+                showView('roleSelect');
+                setTimeout(() => {
+                    gsap.fromTo('.role-card',
+                        { y: 20, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power3.out' }
+                    );
+                }, 200);
+            });
+
+            // History link
+            document.getElementById('historyLink')?.addEventListener('click', () => {
+                if (videoTimeline) videoTimeline.pause();
+                showView('repairHistory');
+                animateHistoryView();
             });
         });
 
@@ -1068,14 +3059,381 @@
         }
 
         function goBack() {
-            showView('roleSelect');
-
-            setTimeout(() => {
-                gsap.fromTo('.role-card',
+            if (isVideoPlaying) {
+                resetVideoDemo();
+                showView('entryScreen');
+                gsap.fromTo('.entry-path',
                     { y: 20, opacity: 0 },
                     { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power3.out' }
                 );
-            }, 200);
+            } else {
+                showView('roleSelect');
+                setTimeout(() => {
+                    gsap.fromTo('.role-card',
+                        { y: 20, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power3.out' }
+                    );
+                }, 200);
+            }
+        }
+
+        // ═══════════════════════════════════════
+        // WATCH IT IN ACTION - VIDEO DEMO
+        // ═══════════════════════════════════════
+
+        function startVideoDemo() {
+            isVideoPlaying = true;
+            showView('videoDashboard');
+
+            // Reset elements
+            resetVideoDemo();
+
+            // Build and play timeline
+            setTimeout(() => {
+                buildVideoTimeline();
+                videoTimeline.play();
+            }, 300);
+        }
+
+        function resetVideoDemo() {
+            // Reset all video demo elements to initial state
+            gsap.set('#alertNotification', { y: '-120%', opacity: 0 });
+            gsap.set('#infoNotification', { y: '-120%', opacity: 0 });
+            gsap.set('#successNotification', { y: '-120%', opacity: 0 });
+            gsap.set('#lift2Dot', { backgroundColor: '#30d158' });
+            gsap.set('#lift2Status', { textContent: 'OK', color: '#30d158' });
+            gsap.set('.response-card', { opacity: 0, y: 10 });
+            gsap.set('#quirkCard', { opacity: 0, y: 10 });
+            gsap.set('#summaryCard', { opacity: 0, y: 10 });
+            gsap.set('#promptOverlay', { opacity: 0, pointerEvents: 'none' });
+            gsap.set('#briefConfirm', { opacity: 0, scale: 0.8 });
+            gsap.set('#memoryHud', { opacity: 0, scale: 0.8 });
+            gsap.set('#historyLink', { opacity: 0 });
+            gsap.set('.history-item', { opacity: 0, x: -10 });
+            gsap.set('#memoryTagline', { opacity: 0 });
+            gsap.set('#demoCta', { opacity: 0, y: 10 });
+        }
+
+        function buildVideoTimeline() {
+            videoTimeline = gsap.timeline({
+                paused: true,
+                onComplete: () => {
+                    isVideoPlaying = false;
+                }
+            });
+
+            // Step 1: Dashboard appears (0:00 - 0:03)
+            videoTimeline
+                .add('start')
+
+            // Step 2: Emergency alert notification (0:03)
+                .add('alert', 2)
+                .to('#alertNotification', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.2)'
+                }, 'alert')
+                .to('#lift2', {
+                    boxShadow: '0 0 0 2px rgba(255, 69, 58, 0.5)',
+                    duration: 0.3,
+                    repeat: 2,
+                    yoyo: true
+                }, 'alert')
+                .to('#lift2Dot', {
+                    backgroundColor: '#ff453a',
+                    duration: 0.2
+                }, 'alert')
+                .to('#lift2Status', {
+                    duration: 0,
+                    onComplete: () => {
+                        document.getElementById('lift2Status').textContent = 'STOPPED';
+                        document.getElementById('lift2Status').style.color = '#ff453a';
+                    }
+                }, 'alert+=0.2')
+
+            // Step 3: Dismiss notification and show emergency response (0:05)
+                .add('tapNotification', 4)
+                .to('#alertNotification', {
+                    scale: 0.95,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 1
+                }, 'tapNotification')
+                .to('#alertNotification', {
+                    y: '-120%',
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: 'power2.in'
+                }, 'tapNotification+=0.3')
+                .call(() => showView('emergencyResponse'), [], 'tapNotification+=0.5')
+
+            // Step 4: Emergency screen - cards appear (0:07)
+                .add('emergencyScreen', 6)
+                .to('#diagnosisCard', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, 'emergencyScreen')
+                .to('#technicianCard', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, 'emergencyScreen+=0.2')
+
+            // Step 5: Quirk card appears (0:10)
+                .add('quirk', 9)
+                .to('#quirkCard', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: 'back.out(1.2)'
+                }, 'quirk')
+
+            // Step 6: Technician confirmed notification (0:14)
+                .add('confirmed', 13)
+                .to('#infoNotification', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.2)'
+                }, 'confirmed')
+                .to('#techStatusBadge', {
+                    duration: 0,
+                    onComplete: () => {
+                        document.getElementById('techStatusBadge').textContent = 'Confirmed';
+                    }
+                }, 'confirmed+=0.5')
+                .to('#infoNotification', {
+                    y: '-120%',
+                    opacity: 0,
+                    duration: 0.3,
+                    delay: 3,
+                    ease: 'power2.in'
+                }, 'confirmed+=0.5')
+
+            // Step 7: Prompt - "Send incident report?" (0:18)
+                .add('promptReport', 17)
+                .call(() => {
+                    document.getElementById('promptText').textContent = 'Send incident report?';
+                    document.getElementById('promptContext').textContent = 'to strata manager';
+                    document.getElementById('promptContext').style.display = 'block';
+                    document.getElementById('promptSecondary').textContent = 'Later';
+                    document.getElementById('promptPrimary').textContent = 'Yes';
+                }, [], 'promptReport')
+                .to('#promptOverlay', {
+                    opacity: 1,
+                    pointerEvents: 'all',
+                    duration: 0.3
+                }, 'promptReport')
+
+            // Step 8: Tap Yes (0:20)
+                .add('tapYes1', 19)
+                .to('#promptPrimary', {
+                    scale: 0.95,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 1
+                }, 'tapYes1')
+                .to('#promptOverlay', {
+                    opacity: 0,
+                    pointerEvents: 'none',
+                    duration: 0.2
+                }, 'tapYes1+=0.3')
+                .to('#briefConfirm', {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.2,
+                    ease: 'back.out(1.5)'
+                }, 'tapYes1+=0.5')
+                .to('#briefConfirm', {
+                    opacity: 0,
+                    duration: 0.2,
+                    delay: 1.2
+                }, 'tapYes1+=0.7')
+
+            // Step 9: On site notification (0:26)
+                .add('onSite', 25)
+                .call(() => {
+                    document.getElementById('infoTitle').textContent = 'Marcus on site';
+                    document.getElementById('infoBody').textContent = 'Collins Tower';
+                }, [], 'onSite')
+                .to('#infoNotification', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.2)'
+                }, 'onSite')
+                .to('#techEta', {
+                    duration: 0,
+                    onComplete: () => {
+                        document.getElementById('techEta').textContent = 'On site';
+                    }
+                }, 'onSite+=0.5')
+                .to('#infoNotification', {
+                    y: '-120%',
+                    opacity: 0,
+                    duration: 0.3,
+                    delay: 3,
+                    ease: 'power2.in'
+                }, 'onSite+=0.5')
+
+            // Step 10: Status changes to REPAIR IN PROGRESS (0:28)
+                .add('working', 27)
+                .to('#lift2Dot', {
+                    backgroundColor: '#e65100',
+                    duration: 0.3
+                }, 'working')
+                .to('#lift2Status', {
+                    duration: 0,
+                    onComplete: () => {
+                        document.getElementById('lift2Status').textContent = 'REPAIR';
+                        document.getElementById('lift2Status').style.color = '#e65100';
+                    }
+                }, 'working')
+
+            // Step 11: Tech update notification (0:36)
+                .add('techUpdate', 35)
+                .call(() => {
+                    document.getElementById('infoTitle').textContent = 'Marcus: Sensor recalibrated';
+                    document.getElementById('infoBody').textContent = 'Testing now';
+                }, [], 'techUpdate')
+                .to('#infoNotification', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.2)'
+                }, 'techUpdate')
+                .to('#infoNotification', {
+                    y: '-120%',
+                    opacity: 0,
+                    duration: 0.3,
+                    delay: 3,
+                    ease: 'power2.in'
+                }, 'techUpdate+=0.5')
+
+            // Step 12: Success notification (0:42)
+                .add('resolved', 41)
+                .to('#successNotification', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.2)'
+                }, 'resolved')
+                .to('#lift2Dot', {
+                    backgroundColor: '#30d158',
+                    duration: 0.3
+                }, 'resolved+=0.5')
+                .to('#lift2Status', {
+                    duration: 0,
+                    onComplete: () => {
+                        document.getElementById('lift2Status').textContent = 'OK';
+                        document.getElementById('lift2Status').style.color = '#30d158';
+                    }
+                }, 'resolved+=0.5')
+                .to('#successNotification', {
+                    y: '-120%',
+                    opacity: 0,
+                    duration: 0.3,
+                    delay: 3,
+                    ease: 'power2.in'
+                }, 'resolved+=0.5')
+
+            // Step 13: Prompt - "Close work order?" (0:48)
+                .add('promptClose', 47)
+                .call(() => {
+                    document.getElementById('promptText').textContent = 'Close work order?';
+                    document.getElementById('promptContext').style.display = 'none';
+                    document.getElementById('promptSecondary').textContent = 'Review';
+                    document.getElementById('promptPrimary').textContent = 'Yes';
+                }, [], 'promptClose')
+                .to('#promptOverlay', {
+                    opacity: 1,
+                    pointerEvents: 'all',
+                    duration: 0.3
+                }, 'promptClose')
+
+            // Step 14: Tap Yes (0:50)
+                .add('tapYes2', 49)
+                .to('#promptPrimary', {
+                    scale: 0.95,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 1
+                }, 'tapYes2')
+                .to('#promptOverlay', {
+                    opacity: 0,
+                    pointerEvents: 'none',
+                    duration: 0.2
+                }, 'tapYes2+=0.3')
+
+            // Step 15: Memory HUD - "Saved to Lift 2" (0:52)
+                .add('memoryHUD', 51)
+                .to('#memoryHud', {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'back.out(1.5)'
+                }, 'memoryHUD')
+                .to('#memoryHud', {
+                    opacity: 0,
+                    scale: 0.9,
+                    duration: 0.25,
+                    delay: 1.5,
+                    ease: 'power2.in'
+                }, 'memoryHUD+=0.3')
+
+            // Step 16: Summary card appears (0:54)
+                .add('summary', 53)
+                .to('#summaryCard', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, 'summary')
+                .to('#historyLink', {
+                    opacity: 1,
+                    duration: 0.3
+                }, 'summary+=1')
+
+            // Step 17: Auto-transition to history view (0:60)
+                .add('autoHistory', 59)
+                .call(() => {
+                    showView('repairHistory');
+                    animateHistoryView();
+                }, [], 'autoHistory');
+        }
+
+        function animateHistoryView() {
+            const historyTl = gsap.timeline();
+
+            historyTl
+                .to('.history-item', {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.4,
+                    stagger: 0.15,
+                    ease: 'power2.out'
+                })
+                .to('#memoryTagline', {
+                    opacity: 1,
+                    duration: 0.5
+                }, '-=0.2')
+                .to('#demoCta', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, '-=0.3')
+                .to('#demoCta', {
+                    boxShadow: '0 0 0 0 rgba(230, 81, 0, 0.7)',
+                    duration: 1,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'power1.inOut'
+                });
         }
     </script>
 </body>
