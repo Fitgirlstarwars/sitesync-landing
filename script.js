@@ -675,7 +675,7 @@ if (modal) {
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
-    
+
     // Close on ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
@@ -683,3 +683,50 @@ if (modal) {
         }
     });
 }
+
+// ============================================
+// 18. VIDEO MODAL
+// ============================================
+const videoModal = document.getElementById('videoModal');
+const videoTrigger = document.querySelector('.video-trigger');
+const demoVideo = document.getElementById('demoVideo');
+const videoModalClose = document.querySelector('.video-modal-close');
+const videoModalBackdrop = document.querySelector('.video-modal-backdrop');
+
+function openVideoModal() {
+    if (!videoModal) return;
+    videoModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (demoVideo) {
+        demoVideo.play();
+    }
+}
+
+function closeVideoModal() {
+    if (!videoModal) return;
+    videoModal.classList.remove('active');
+    document.body.style.overflow = '';
+    if (demoVideo) {
+        demoVideo.pause();
+        demoVideo.currentTime = 0;
+    }
+}
+
+if (videoTrigger) {
+    videoTrigger.addEventListener('click', openVideoModal);
+}
+
+if (videoModalClose) {
+    videoModalClose.addEventListener('click', closeVideoModal);
+}
+
+if (videoModalBackdrop) {
+    videoModalBackdrop.addEventListener('click', closeVideoModal);
+}
+
+// Close video modal on ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
+        closeVideoModal();
+    }
+});

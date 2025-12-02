@@ -233,6 +233,74 @@ h1, h2, h3 {
     animation: none;
 }
 
+/* Video Trigger Button */
+.video-trigger {
+    margin-right: 0.5rem;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.video-modal-content {
+    position: relative;
+    z-index: 1;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: var(--surface-dark);
+    border: 2px solid var(--accent-orange);
+    box-shadow: 0 0 40px rgba(230, 81, 0, 0.3);
+}
+
+.video-modal-content video {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.video-modal-close:hover {
+    color: var(--accent-orange);
+}
+
 /* Hero Section */
 .hero-section {
     height: 100vh;

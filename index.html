@@ -77,11 +77,27 @@
             <a href="companies.html">FOR COMPANIES</a>
             <a href="platform.html">THE SYSTEM</a>
         </div>
+        <button class="cta-btn video-trigger" aria-label="Watch Demo Video">
+            <span class="desktop-text">WATCH DEMO</span>
+            <span class="mobile-text">▶</span>
+        </button>
         <button class="cta-btn terminal-trigger" aria-label="Access Information Terminal">
             <span class="desktop-text">INFORMATION TERMINAL</span>
             <span class="mobile-text">&gt;_</span>
         </button>
     </nav>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-backdrop"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" aria-label="Close video">&times;</button>
+            <video id="demoVideo" controls>
+                <source src="sitesync-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
     <main id="main-content">
     <!-- Hero Section (Concrete Foundation) -->
