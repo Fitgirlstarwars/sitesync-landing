@@ -95,7 +95,6 @@ class SiteSyncTerminal {
                 lines: [
                     { text: "THE SOLUTION:", style: "success", pause: 400 },
                     { text: "One platform connecting Buildings, Trades, and AI.", pause: 800 },
-                    { text: "", pause: 200 },
                     { text: "1. PERMANENT MEMORY", style: "info" },
                     { text: "Data stays with the building, forever.", pause: 400 },
                     { text: "2. SHARED INTELLIGENCE", style: "info" },
